@@ -1,0 +1,38 @@
+.intro {
+  height: 100vh;
+}
+
+.header {
+  position: absolute;
+  display: inline-flex;
+  width: 100%;
+  
+  font-size: 1.5rem;
+}
+
+.intro a {
+  color: var(--font-color);
+  text-decoration: none;
+  margin: 2em;
+}
+
+.intro button {
+  margin: 2em;
+  margin-left: auto;
+}
+
+.intro p {
+  display: flex;
+  height: inherit;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 40px;
+  font-weight: bold;
+
+  padding-left: 2em;
+  padding-right: 2em;
+  
+  color: var(--font-color);
+}

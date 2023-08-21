@@ -1,0 +1,28 @@
+/* at window size */
+
+/* at tablet size */
+
+/* at mobile size */
+
+.navbar {
+  display: flex;
+  justify-content: center;
+
+  /* might not need overflow if changing format for mobile */
+  overflow-x: clip;
+  position: sticky;
+  top: 0px;
+
+  background-color: grey;
+  font-size: 1.5rem;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0px;
+
+}
+
+.navbar ul li {
+  margin: 1em;
+}

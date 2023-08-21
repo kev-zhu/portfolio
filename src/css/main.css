@@ -1,0 +1,30 @@
+body {
+  --primary-background-color: white;
+  --secondary-background-color: lightgrey;
+  --font-color: black;
+
+  background-color: var(--primary-background-color);
+  color: var(--font-color);
+
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.dark {
+  --primary-background-color: black;
+  --secondary-background-color: grey;
+  --font-color: white;
+
+  background-color: var(--primary-background-color);
+    color: var(--font-color)
+
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem)
+}
+
+body, p,
+ul {
+  margin: 0px;
+}
