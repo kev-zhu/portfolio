@@ -20,9 +20,17 @@
 .navbar ul {
   list-style: none;
   padding: 0px;
-
 }
 
 .navbar ul li {
   margin: 1em;
+  text-decoration: underline 0.1em rgba(1,1,1,0);
+  transition: text-decoration-color 0.5s, font-size 0.5s, margin 0.5s;
+}
+
+.navbar ul li:hover {
+  cursor: pointer;
+  text-decoration-color: var(--font-color);
+  font-size: 1.3em;
+  margin: 0.6em;
 }

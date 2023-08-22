@@ -1,9 +1,11 @@
 // import { useState, useEffect } from 'react'
+// import { useRef } from 'react'
 
 import '../css/navbar.css'
 
-const NavBar = () => {
+const NavBar = ({ scroll }) => {
   // const [scrolled, setScrolled] = useState([false])
+  // const pageRef = useRef(null)
 
   // useEffect(() => {
 
@@ -12,11 +14,12 @@ const NavBar = () => {
   return (
     <div className={'navbar'}>
       <ul className={'flex'}>
-        <li>Home</li>
-        <li>About</li>
-        <li>Skills</li>
-        <li>Projects</li>
-        <li>Contact</li>
+        <li onClick={() => {scroll('intro')}}>Home</li>
+        <li onClick={() => {scroll('about')}}>About</li>
+        <li onClick={() => {scroll('skills')}}>Skills</li>
+        <li onClick={() => {scroll('projects')}}>Projects</li>
+        <li onClick={() => {scroll('contact')}}>Contact</li>
+        {/* some other function to pop up here */}
         <li>Resume</li>
       </ul>
     </div>

@@ -3,11 +3,16 @@ import Body from './components/body'
 
 import './css/main.css'
 
-const App = () => {
+const App = () => { 
+  const scrollToPage = (page) => {
+    const p = document.querySelector(`.${page}`)
+    p?.scrollIntoView({behavior:'smooth', block: 'center'})
+  }
+
   return (
     <div>
-      <Header />
-      <Body />
+      <Header scroll={scrollToPage} />
+      <Body scroll={scrollToPage} />
     </div>
   )
 }
