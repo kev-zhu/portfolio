@@ -1,18 +1,57 @@
+import { useState, useEffect, useRef } from 'react'
+
 import Header from './components/header'
 import Body from './components/body'
 
 import './css/main.css'
 
-const App = () => { 
-  const scrollToPage = (page) => {
-    const p = document.querySelector(`.${page}`)
-    p?.scrollIntoView({behavior:'smooth', block: 'center'})
+const App = () => {
+  const [activeSection, setActiveSection] = useState(null)
+  const observer = useRef(null)
+
+  useEffect(() => {
+    observer.current = new IntersectionObserver((entries) => {
+      const visibleSection = entries.find(entry => entry.isIntersecting)?.target
+
+      if (visibleSection) {
+        setActiveSection(visibleSection.id)
+      }
+    }, {
+      threshold: 1,
+    })
+    
+    const sections = document.querySelectorAll('[data-section]')
+
+    sections.forEach(section => {
+      observer.current.observe(section)
+    })
+    
+    return () => {
+      sections.forEach(section => {
+        observer.current.unobserve(section)
+      })
+    }
+
+  }, [])
+
+  const clickScrollToPage = (page) => {
+    const p = document.querySelector(`#${page}`)
+    p?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+
+  const setActive = (focus) => {
+    document.querySelectorAll('.active').forEach(element => {
+      element.classList.remove('active')
+    })
+    document.querySelector(`.li-${focus}`)?.classList.add('active')
   }
 
   return (
     <div>
-      <Header scroll={scrollToPage} />
-      <Body scroll={scrollToPage} />
+      {console.log(activeSection)}
+      {setActive(activeSection)}
+      <Header scroll={clickScrollToPage} />
+      <Body scroll={clickScrollToPage} />
     </div>
   )
 }

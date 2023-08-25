@@ -1,0 +1,63 @@
+#projects {
+  position: relative;
+  background-color: lightpink;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.projects-header {
+  font-size: 2.5rem;
+  line-height: 100px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.carousel-container { 
+  position: relative;
+}
+
+.carousel {
+  --gap: 0;
+  --panel-index: 0;
+
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  
+  transform: translateX(calc(var(--panel-index) * -33.33%));
+  transition: transform 500ms ease-in;
+}
+
+.carousel-content {
+  align-items: center;
+  width: 100%;
+}
+
+.project-sample {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  aspect-ratio: 4/3;
+  background-color: lightblue;
+
+  transition: background-color 500ms ease-in;
+}
+
+.project-sample.active-panel {
+  background-color: lightgrey;
+} 
+
+.carousel-btn {
+  position: absolute;
+  z-index: 10;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.carousel-btn.next {
+  right: 0px;
+}

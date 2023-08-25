@@ -6,7 +6,7 @@ const Header = () => {
   }
 
   return (
-    <div className={'intro'}>
+    <div className={'intro'} id='home' data-section='home'>
 
       <div className={'header'}>
         <a href={'.'}>Kevin Zhu</a>

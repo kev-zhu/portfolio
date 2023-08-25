@@ -1,0 +1,26 @@
+.about-container {
+  --gap: 5em;
+
+  background-color: green;
+
+  /* change the height some thing else later */
+  height: 500px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.self {
+  background-color: red;
+  height: 80%;
+  width: auto;
+}
+
+.self-info {
+  background-color: lightgreen;
+  height: 50%;
+  width: 50%;
+
+  font-size: 1.25rem;
+
+}
