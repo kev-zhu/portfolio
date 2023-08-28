@@ -33,13 +33,12 @@
   width: 100%;
 }
 
+/* change size of project to simluate "overflow" */
 .project-sample {
   flex: 0 0 33.33%;
   max-width: 33.33%;
   aspect-ratio: 4/3;
   background-color: lightblue;
-
-  transition: background-color 500ms ease-in;
 }
 
 .project-sample.active-panel {

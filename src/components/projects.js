@@ -8,8 +8,9 @@ const Projects = () => {
 
   useEffect(() => {
     panelCount.count = document.querySelectorAll('.project-sample').length
-    setStartingPanel()
+    setStartingPanel()    
   }, [])
+
 
   const setStartingPanel = () => {
     if (document.querySelectorAll('.active-panel').length === 0) {
@@ -21,11 +22,14 @@ const Projects = () => {
   const prevPanel = () => {
     activePanel.current = (activePanel.current === 0 ? panelCount.count - 1 : activePanel.current - 1) % panelCount.count
     changeActivePanel(-1)
+    rotatePanel(-1)
   }
 
   const nextPanel = () => {
     activePanel.current = (activePanel.current === panelCount.count - 1 ? 0 : activePanel.current + 1) % panelCount.count
+    
     changeActivePanel(1)
+    rotatePanel(1)
   }
 
   const changeActivePanel = (panelShift) => {
@@ -36,6 +40,21 @@ const Projects = () => {
     const projectPanels = document.querySelectorAll('.project-sample')
     Array.from(projectPanels).find(panel => panel.classList.contains('active-panel')).classList.toggle('active-panel')
     projectPanels[activePanel.current].classList.add('active-panel')
+  }
+
+  const rotatePanel = (panelShift) => {  
+    const carousel = document.querySelector('.carousel')
+    const panels = document.querySelectorAll('.project-sample')
+
+    const currPanelIndex = parseInt(getComputedStyle(carousel).getPropertyValue('--panel-index'))
+    let targetIndex
+
+    targetIndex = panelShift === 1 ? (currPanelIndex - 1) % panels.length : (currPanelIndex - 1 - panelShift) % panels.length
+    targetIndex = targetIndex < 0 ? targetIndex + Math.ceil(-targetIndex / panels.length) * panels.length : targetIndex
+
+    const shift = panelShift === 1 ? Math.ceil(currPanelIndex / panels.length) * 500 : Math.floor(currPanelIndex / panels.length) * 500
+
+    panels[targetIndex].style.transform = `translateX(${shift}%)`
   }
 
   return (
@@ -60,7 +79,7 @@ const Projects = () => {
         </div>
 
       </div>
-      
+
     </div>
   )
 }
