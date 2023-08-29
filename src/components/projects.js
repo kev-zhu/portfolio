@@ -3,12 +3,13 @@ import { useEffect, useRef } from 'react'
 import '../css/projects.css'
 
 const Projects = () => {
-  const activePanel = useRef(1)
+  const activePanel = useRef(0)
   const panelCount = useRef(null)
 
   useEffect(() => {
     panelCount.count = document.querySelectorAll('.project-sample').length
-    setStartingPanel()    
+    setStartingPanel()
+    rotatePanel()
   }, [])
 
 
@@ -16,20 +17,22 @@ const Projects = () => {
     if (document.querySelectorAll('.active-panel').length === 0) {
       const projectPanels = document.querySelectorAll('.project-sample')
       projectPanels[activePanel.current].classList.add('active-panel')
+      document.querySelector('.carousel-container').style.height = `${document.querySelector('.active-panel').offsetHeight}px`
     }
   }
 
   const prevPanel = () => {
     activePanel.current = (activePanel.current === 0 ? panelCount.count - 1 : activePanel.current - 1) % panelCount.count
-    changeActivePanel(-1)
-    rotatePanel(-1)
+
+    changeActivePanel(1)
+    rotatePanel()
   }
 
   const nextPanel = () => {
     activePanel.current = (activePanel.current === panelCount.count - 1 ? 0 : activePanel.current + 1) % panelCount.count
-    
-    changeActivePanel(1)
-    rotatePanel(1)
+
+    changeActivePanel(-1)
+    rotatePanel()
   }
 
   const changeActivePanel = (panelShift) => {
@@ -42,19 +45,46 @@ const Projects = () => {
     projectPanels[activePanel.current].classList.add('active-panel')
   }
 
-  const rotatePanel = (panelShift) => {  
+  const rotatePanel = () => {
     const carousel = document.querySelector('.carousel')
-    const panels = document.querySelectorAll('.project-sample')
-
     const currPanelIndex = parseInt(getComputedStyle(carousel).getPropertyValue('--panel-index'))
-    let targetIndex
 
-    targetIndex = panelShift === 1 ? (currPanelIndex - 1) % panels.length : (currPanelIndex - 1 - panelShift) % panels.length
-    targetIndex = targetIndex < 0 ? targetIndex + Math.ceil(-targetIndex / panels.length) * panels.length : targetIndex
+    const panels = document.querySelectorAll('.project-sample')
+    const panelWidth = panels[0].offsetWidth
+    const angleRad = 2 * Math.PI / panelCount.count
 
-    const shift = panelShift === 1 ? Math.ceil(currPanelIndex / panels.length) * 500 : Math.floor(currPanelIndex / panels.length) * 500
+    let shift = currPanelIndex < 0 ? (panelCount.count + (currPanelIndex % panelCount.count)) % panelCount.count : currPanelIndex % panelCount.count
+    //take account of shift to whichever active panel is showing
+    
+    shift = panelCount.count - activePanel.current
+    
+    let index = 0
 
-    panels[targetIndex].style.transform = `translateX(${shift}%)`
+    panels.forEach(panel => {
+      const oneSectionX = Number(Math.cos(angleRad).toFixed(10))
+
+      const xRotation = Number(Math.cos((index + shift) * angleRad).toFixed(10))
+      const zRotation = Number(Math.sin((index + shift) * angleRad).toFixed(10))
+
+      let transX
+      if (xRotation === 1) {
+        transX = 0
+        panel.style.zIndex = '2'
+        panel.style.opacity = '1'
+      } else if (xRotation === oneSectionX) {
+        transX = Math.round(zRotation) * panelWidth
+        panel.style.zIndex = '1'
+        panel.style.opacity = '0.5'
+      } else {
+        transX = 2 * Math.round(zRotation) * panelWidth
+        panel.style.zIndex = '1'
+        panel.style.opacity = '0'
+      }
+
+      panels[index % panels.length].style.transform = `translateX(${transX}px)`
+
+      index += 1
+    })
   }
 
   return (
@@ -68,8 +98,8 @@ const Projects = () => {
           <button className='carousel-btn next' onClick={nextPanel}>&#10095;</button>
         </div>
 
-        <div className='carousel flex'>
-          <ul className='carousel-content flex'>
+        <div className='carousel'>
+          <ul className='carousel-content'>
             <li className='project-sample'>1</li>
             <li className='project-sample'>2</li>
             <li className='project-sample'>3</li>
