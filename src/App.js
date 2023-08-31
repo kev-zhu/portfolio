@@ -17,7 +17,8 @@ const App = () => {
         setActiveSection(visibleSection.id)
       }
     }, {
-      threshold: 1,
+      //figure out threshold amount later? --amt before highlighted on navbar
+      threshold: 0.75,
     })
     
     const sections = document.querySelectorAll('[data-section]')

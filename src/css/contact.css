@@ -1,7 +1,9 @@
 #contact {
+    position: relative;
     flex-direction: column;
-    background-color: lightgoldenrodyellow;
-    height: 500px;
+    justify-content: center;
+    align-items: center;
+    /* background-color: lightgoldenrodyellow; */
 }
 
 .contact-header {
@@ -11,22 +13,90 @@
     text-align: center;
 }
 
+.contact-message {
+    position: absolute;
+    width: 50%;
+    height: 3rem;
+    top: 6rem;
+    line-height: 3rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.success {
+    background-color: lightgreen;
+}
+
+.error {
+    background-color: coral;
+}
+
 .contact-container {
     --gap: 5em;
     flex-grow: 1;
 
     justify-content: center;
-    /* align-items: center; */
+    padding: 4rem;
+
+    flex-wrap: wrap;
+}
+
+.contact-container > * {
+    width: 40%;
+    height: inherit;
+    flex: 1 1 auto;
 }
 
 .personal-info {
+    min-width: 350px;
     background-color: grey;
-    height: 80%;
-    width: 30%;
 }
 
-.message {
+.personal-info > * {
+    font-size: 1.5rem;
+    font-family: "Times New Roman", Times, serif;
+    padding: 1rem;
+}
+
+.messaging {
     background-color: lightgrey;
-    width: 50%;
-    height: 80%;
+    padding: 1rem;
+}
+
+.messaging-form {
+    --gap: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.messaging-form > * {
+    flex: 1 1 auto;
+    height: 3rem;
+    padding-left: 10px;
+    background: white;
+    outline: none;
+    border: none;
+
+    font-size: 1.5rem;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#form-name, #form-email {
+    width: 45%;
+}
+
+#form-subject, #form-submit {
+    width: 100%;
+}
+
+#form-submit {
+    cursor: pointer;
+}
+
+#form-message { 
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    resize: none;
 }

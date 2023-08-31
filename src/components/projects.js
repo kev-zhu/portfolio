@@ -7,9 +7,41 @@ const Projects = () => {
   const panelCount = useRef(null)
 
   useEffect(() => {
+    const adjustCarouselContainerHeight = (height) => {
+      document.querySelector('.carousel-container').style.height = height !== undefined ? `${height}px` : `${document.querySelector('.active-panel').offsetHeight}px`
+    }
+
+    const resizePanels = () => {
+      const containerWidth = document.querySelector('.carousel-container').offsetWidth
+
+      const adjustedPanelWidth = containerWidth / 3
+      const adjustedPanelHeight = adjustedPanelWidth * 3 / 4
+
+
+      const panels = document.querySelectorAll('.project-sample')
+      const oldPanelWidth = Number(panels[0].offsetWidth)
+      panels.forEach(panel => {
+        const style = window.getComputedStyle(panel)
+        const matrix = new DOMMatrixReadOnly(style.transform)
+        const oldTransX = matrix.m41
+
+        panel.style.width = `${panel.offsetWidth / oldPanelWidth * adjustedPanelWidth}px`
+        panel.style.transform = `translateX(${oldTransX / Math.abs(oldTransX) * adjustedPanelWidth}px)`
+      })
+      
+      adjustCarouselContainerHeight(adjustedPanelHeight)
+    }
+
     panelCount.count = document.querySelectorAll('.project-sample').length
     setStartingPanel()
     rotatePanel()
+    adjustCarouselContainerHeight()
+
+    window.addEventListener('resize', resizePanels)
+
+    return () => {
+      window.removeEventListener('resize', resizePanels)
+    }
   }, [])
 
 
@@ -17,15 +49,16 @@ const Projects = () => {
     if (document.querySelectorAll('.active-panel').length === 0) {
       const projectPanels = document.querySelectorAll('.project-sample')
       projectPanels[activePanel.current].classList.add('active-panel')
-      document.querySelector('.carousel-container').style.height = `${document.querySelector('.active-panel').offsetHeight}px`
     }
   }
+
 
   const prevPanel = () => {
     activePanel.current = (activePanel.current === 0 ? panelCount.count - 1 : activePanel.current - 1) % panelCount.count
 
     changeActivePanel(1)
     rotatePanel()
+    pauseBtns()
   }
 
   const nextPanel = () => {
@@ -33,6 +66,8 @@ const Projects = () => {
 
     changeActivePanel(-1)
     rotatePanel()
+    pauseBtns()
+
   }
 
   const changeActivePanel = (panelShift) => {
@@ -42,7 +77,7 @@ const Projects = () => {
 
     const projectPanels = document.querySelectorAll('.project-sample')
     Array.from(projectPanels).find(panel => panel.classList.contains('active-panel')).classList.toggle('active-panel')
-    projectPanels[activePanel.current].classList.add('active-panel')
+    projectPanels[activePanel.current % panelCount.count].classList.add('active-panel')
   }
 
   const rotatePanel = () => {
@@ -55,9 +90,9 @@ const Projects = () => {
 
     let shift = currPanelIndex < 0 ? (panelCount.count + (currPanelIndex % panelCount.count)) % panelCount.count : currPanelIndex % panelCount.count
     //take account of shift to whichever active panel is showing
-    
+
     shift = panelCount.count - activePanel.current
-    
+
     let index = 0
 
     panels.forEach(panel => {
@@ -76,6 +111,10 @@ const Projects = () => {
         panel.style.zIndex = '1'
         panel.style.opacity = '0.5'
       } else {
+        //make it look like its on rotation
+        // transX = zRotation * panelWidth
+
+        //makes it look more linear
         transX = 2 * Math.round(zRotation) * panelWidth
         panel.style.zIndex = '1'
         panel.style.opacity = '0'
@@ -87,8 +126,36 @@ const Projects = () => {
     })
   }
 
+  //keep function? prevents a messy jumble of panels if click too fast
+  const pauseBtns = () => {
+    const carouselButtons = document.querySelectorAll('.carousel-btn')
+    carouselButtons.forEach(button => {
+      button.disabled = true
+    })
+    setTimeout(() => {
+      carouselButtons.forEach(button => {
+        button.disabled = false
+      })
+    }, 250)
+  }
+
+  //currently using input + submit --> change to passing in a var later on click depending on btn to rotate to targeted panel
+  // const testRef = () => {
+  //   const target = Number(document.querySelector('#testval').value) || 0
+  //   const oldActive = activePanel.active
+  //   activePanel.current = target
+
+  //   const shift = (oldActive + activePanel.current) % panelCount.count
+  //   changeActivePanel(shift)
+  //   rotatePanel()
+  // }
+
   return (
     <div className='flex' id='projects' data-section='projects'>
+
+      {/* <input type='text' id='testval'/>
+      <button onClick={testRef}>test</button> */}
+
       <p className='projects-header'>Projects</p>
 
       <div className='carousel-container'>
@@ -105,6 +172,7 @@ const Projects = () => {
             <li className='project-sample'>3</li>
             <li className='project-sample'>4</li>
             <li className='project-sample'>5</li>
+
           </ul>
         </div>
 
