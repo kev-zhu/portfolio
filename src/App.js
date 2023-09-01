@@ -20,13 +20,13 @@ const App = () => {
       //figure out threshold amount later? --amt before highlighted on navbar
       threshold: 0.75,
     })
-    
+
     const sections = document.querySelectorAll('[data-section]')
 
     sections.forEach(section => {
       observer.current.observe(section)
     })
-    
+
     return () => {
       sections.forEach(section => {
         observer.current.unobserve(section)
@@ -36,8 +36,19 @@ const App = () => {
   }, [])
 
   const clickScrollToPage = (page) => {
-    const p = document.querySelector(`#${page}`)
-    p?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    const hamburgerCheck = document.querySelector('.hamburger-check')
+
+    //deal with closing sidebar for mobile mode
+    if (hamburgerCheck.checked) {
+      hamburgerCheck.checked = false;
+    }
+
+    window.scrollTo({
+      behavior: 'smooth',
+      top: document.querySelector(`#${page}`).getBoundingClientRect().top -
+        document.body.getBoundingClientRect().top -
+        document.querySelector('.navbar').offsetHeight
+    })
   }
 
   const setActive = (focus) => {

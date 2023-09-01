@@ -1,10 +1,11 @@
-/* at window size */
-
-/* at tablet size */
-
-/* at mobile size */
-
 .navbar {
+  --bar-width: 41px;
+  --bar-height: 8px;
+  --hamburger-gap: 6px;
+  --foreground: #333;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+
+  position: relative;
   display: flex;
   justify-content: center;
 
@@ -13,23 +14,24 @@
   position: sticky;
   top: 0px;
 
+  height: 76px;
   background-color: grey;
   font-size: 1.5rem;
   z-index: 100;
 }
 
-.navbar ul {
+.nav-selection {
   list-style: none;
   padding: 0px;
 }
 
-.navbar ul li {
+.nav-selection > li {
   margin: 1em;
   text-decoration: underline 0.1em rgba(1,1,1,0);
   transition: text-decoration-color 0.5s, font-size 0.5s, margin 0.5s;
 }
 
-.navbar ul li:hover {
+.nav-selection > li:hover {
   cursor: pointer;
   text-decoration-color: var(--font-color);
   font-size: 1.3em;
@@ -38,4 +40,72 @@
 
 .active {
   text-decoration: underline 0.1em var(--font-color) !important;
+}
+
+.nav-hamburger-menu {
+  padding: 5px;
+  --x-width: calc(var(--hamburger-height) * 1.4142135637);
+
+  display: none;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+
+  position: absolute;
+  z-index: 1000;
+  margin: 0;
+
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+  
+  background-color: inherit;
+  border-radius: 5px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+
+.nav-hamburger-menu::before,
+.nav-hamburger-menu input,
+.nav-hamburger-menu::after {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background: var(--foreground);
+  border-radius: 9999px;
+  transform-origin: left center;
+} 
+
+.nav-hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.nav-hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.nav-hamburger-menu:has(input:checked) {
+  width: var(--hamburger-height)
+
+}
+
+.nav-hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.nav-hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.nav-hamburger-menu:has(input:checked) + .nav-selection {
+  translate: 0;
 }

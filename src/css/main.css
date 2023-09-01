@@ -2,6 +2,8 @@ body {
   --primary-background-color: white;
   --secondary-background-color: lightgrey;
   --font-color: black;
+  --animation-timing: 200ms ease-in-out;
+
 
   background-color: var(--primary-background-color);
   color: var(--font-color);
@@ -18,6 +20,81 @@ body.dark {
     color: var(--font-color)
 
 }
+
+/* for large screens */
+@media only screen and (max-width: 1000px) {
+  #contact {
+    width: 95%;
+    margin: auto;
+  }
+}
+
+/* +1 to account for difference in change */
+@media only screen and (min-width: 801px) {
+  .nav-selection {
+    display: flex;
+    gap: var(--gap, 1rem)
+  }
+}
+
+/* for med screens */
+@media only screen and (max-width: 800px) {
+  .nav-selection {
+    position: absolute;
+    flex-direction: column;
+    right: 0;
+    width: 80%;
+    /* random small 1-2 px spacing? */
+    height: calc(100vh - 4.75rem + 1px);
+    margin-top: calc(4.75rem); 
+    background-color: hsla(0, 100%, 1000%, 95%);
+
+    transition: translate var(--animation-timing);
+    translate: 100%;
+  }
+
+  .nav-selection > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none !important;
+  }
+
+  .nav-selection > li:hover {
+    margin: 0px;
+    padding: 0px;
+    font-size: 2rem;
+  }
+
+  .active {
+    text-decoration: none !important;
+  }
+
+  .nav-selection > li { 
+    font-size: 2rem;
+    padding: 0px;
+    margin: 0px;
+    flex-grow: 1;
+  }
+
+  .nav-hamburger-menu {
+    display: flex;
+  }
+  /* collapse nav to hamburger */
+
+
+  /* change size of active panel? */
+
+  /* change skills to carousel?*/
+}
+
+/* for small screens */
+@media only screen and (max-width: 600px) {
+  
+}
+
 
 .flex {
   display: flex;

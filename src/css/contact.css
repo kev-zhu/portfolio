@@ -37,7 +37,7 @@
     flex-grow: 1;
 
     justify-content: center;
-    padding: 4rem;
+    padding-top: 4rem;
 
     flex-wrap: wrap;
 }
