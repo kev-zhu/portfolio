@@ -17,7 +17,6 @@ const App = () => {
         setActiveSection(visibleSection.id)
       }
     }, {
-      //figure out threshold amount later? --amt before highlighted on navbar
       threshold: 1,
     })
 

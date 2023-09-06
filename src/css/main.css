@@ -8,17 +8,30 @@ body {
   color: var(--font-color);
 }
 
-@media only screen and (min-width: 800px) {
-  .nav-selection {
-    display: flex;
-    gap: var(--gap, 1rem)
+/* mainly for resizing of about page items on bigger screens*/
+@media only screen and (max-width: 1020px) {
+  .about-container {
+    --gap: 3rem;
+    padding: 3rem;
+  }
+
+  .self {
+    aspect-ratio: 1.75;
+  }
+
+  .self, .self-info {
+    width: 70%;
   }
 }
 
-/* for small/med screens */
+/* for small-med screens */
 @media only screen and (max-width: 800px) {
   .intro > p { 
     padding: 0 1em;
+  }
+
+  .about-container {
+    padding: 2.5rem 0;
   }
 
   /* collapse nav to hamburger */
@@ -65,7 +78,7 @@ body {
     display: flex;
   }
 
-  /* change size of active panel? */
+  /* change size of active panel */
   #projects {
     padding-bottom: 3rem;
   }
@@ -79,7 +92,7 @@ body {
   }
 
   .carousel-btns {
-    margin-top: 9rem;
+    translate: 0 10%;
   }
 
   .skills-container {
@@ -87,10 +100,26 @@ body {
   }
 
   .item {
-    height: 100px;
     width: 100px;
   } 
 }
+
+/* for small screens */
+@media only screen and (max-width: 450px) {
+  .project-sample.active-panel {
+    scale: 1.6
+  }
+
+  #skills {
+    padding: 2rem;
+  }
+
+  .item {
+    width: 75px;
+  }
+}
+
+
 
 
 .flex {

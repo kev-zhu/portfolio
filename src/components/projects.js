@@ -163,7 +163,7 @@ const Projects = ({ ap }) => {
           </ul>
         </div>
 
-        <div className='carousel-btns flex'>
+        <div className='carousel-btns'>
           <button className='carousel-btn prev' onClick={prevPanel}>&#10094;</button>
           <button className='carousel-btn next' onClick={nextPanel}>&#10095;</button>
         </div>

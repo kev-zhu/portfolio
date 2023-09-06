@@ -1,5 +1,5 @@
 .about-container {
-  --gap: 8rem;
+  --gap: 3rem;
 
   justify-content: center;
   align-items: center;
@@ -16,14 +16,15 @@
 .self {
   background-color: red;
   width: 350px;
+  min-width: 250px;
   aspect-ratio: 3/4;
   flex: 0 0 auto;
 }
 
 .self-info {
   background-color: lightgreen;
-  min-width: 300px;
-  width: 50%;
+  min-width: 250px;
+  width: 40%;
 
   font-size: 1.5rem;
 }
