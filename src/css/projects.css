@@ -6,6 +6,8 @@
   flex-direction: column;
   overflow-x: clip;
   height: max-content;
+  padding: 2rem;
+  margin-bottom: 3rem;
 }
 
 .projects-header {
@@ -18,8 +20,7 @@
 .carousel-container { 
   --gap: 0;
   position: relative;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding: 6rem 0;
   flex-grow: 1;
 }
 
@@ -44,7 +45,7 @@
   margin-left:auto;
   margin-right: auto;
 
-  width: 33.33%;
+  width: max(400px, 33.33%);
   aspect-ratio: 4/3;
 
   transition: all var(--transiton-time) ease-in-out;
@@ -59,18 +60,32 @@
   transition: all var(--transiton-time) ease-in-out;
 } 
 
+.carousel-btns {
+  justify-content: center;
+  align-items: end;
+  height: inherit;
+  margin-top: 7rem;
+}
+
 .carousel-btn {
-  position: absolute;
   z-index: 10;
-  background: none;
-  border: none;
   font-size: 2rem;
-  top: 50%;
-  transform: translateY(-50%);
   cursor: pointer;
   background-color: rgba(0,0,0,0.1);
 }
 
-.carousel-btn.next {
-  right: 0px;
+.carousel-btn {
+  padding: 1rem 2rem;
+  margin: 0 2rem;
+  background: none;
+  border: none;
+}
+
+.carousel-btn:disabled {
+  color: black; 
+}
+
+.carousel-btn:focus {
+  border: none;
+  outline: none;
 }

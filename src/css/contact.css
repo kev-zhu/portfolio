@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     /* background-color: lightgoldenrodyellow; */
+    margin: 2rem 2rem;
 }
 
 .contact-header {
@@ -49,7 +50,7 @@
 }
 
 .personal-info {
-    min-width: 350px;
+    min-width: 300px;
     background-color: grey;
 }
 

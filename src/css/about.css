@@ -1,25 +1,29 @@
 .about-container {
-  --gap: 5em;
+  --gap: 8rem;
 
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 
   background-color: green;
-  padding: 3rem;
+  padding: 7rem 3rem;
+}
+
+.about-container > * {
+  padding: 0 1rem;
 }
 
 .self {
   background-color: red;
-  width: 300px;
+  width: 350px;
   aspect-ratio: 3/4;
   flex: 0 0 auto;
 }
 
 .self-info {
   background-color: lightgreen;
-  min-width: 350px;
-  width: 40%;
+  min-width: 300px;
+  width: 50%;
 
   font-size: 1.5rem;
 }

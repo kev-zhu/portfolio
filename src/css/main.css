@@ -4,56 +4,38 @@ body {
   --font-color: black;
   --animation-timing: 200ms ease-in-out;
 
-
   background-color: var(--primary-background-color);
   color: var(--font-color);
-
-  transition: background 0.5s ease, color 0.5s ease;
 }
 
-body.dark {
-  --primary-background-color: black;
-  --secondary-background-color: grey;
-  --font-color: white;
-
-  background-color: var(--primary-background-color);
-    color: var(--font-color)
-
-}
-
-/* for large screens */
-@media only screen and (max-width: 1000px) {
-  #contact {
-    width: 95%;
-    margin: auto;
-  }
-}
-
-/* +1 to account for difference in change */
-@media only screen and (min-width: 801px) {
+@media only screen and (min-width: 800px) {
   .nav-selection {
     display: flex;
     gap: var(--gap, 1rem)
   }
 }
 
-/* for med screens */
+/* for small/med screens */
 @media only screen and (max-width: 800px) {
+  .intro > p { 
+    padding: 0 1em;
+  }
+
+  /* collapse nav to hamburger */
   .nav-selection {
     position: absolute;
     flex-direction: column;
     right: 0;
     width: 80%;
-    /* random small 1-2 px spacing? */
-    height: calc(100vh - 4.75rem + 1px);
-    margin-top: calc(4.75rem); 
+    height: calc(100vh - 4.75rem);
+    margin-top: calc(4.75rem);
     background-color: hsla(0, 100%, 1000%, 95%);
 
     transition: translate var(--animation-timing);
     translate: 100%;
   }
 
-  .nav-selection > li {
+  .nav-selection>li {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +44,7 @@ body.dark {
     text-decoration: none !important;
   }
 
-  .nav-selection > li:hover {
+  .nav-selection>li:hover {
     margin: 0px;
     padding: 0px;
     font-size: 2rem;
@@ -72,7 +54,7 @@ body.dark {
     text-decoration: none !important;
   }
 
-  .nav-selection > li { 
+  .nav-selection>li {
     font-size: 2rem;
     padding: 0px;
     margin: 0px;
@@ -82,17 +64,32 @@ body.dark {
   .nav-hamburger-menu {
     display: flex;
   }
-  /* collapse nav to hamburger */
-
 
   /* change size of active panel? */
-
-  /* change skills to carousel?*/
-}
-
-/* for small screens */
-@media only screen and (max-width: 600px) {
+  #projects {
+    padding-bottom: 3rem;
+  }
   
+  .project-sample {
+    width: 60%;
+  }
+
+  .project-sample.active-panel {
+    scale: 1.4;
+  }
+
+  .carousel-btns {
+    margin-top: 9rem;
+  }
+
+  .skills-container {
+    padding: 1rem;
+  }
+
+  .item {
+    height: 100px;
+    width: 100px;
+  } 
 }
 
 
@@ -101,7 +98,8 @@ body.dark {
   gap: var(--gap, 1rem)
 }
 
-body, p,
+body,
+p,
 ul {
   margin: 0;
   padding: 0;

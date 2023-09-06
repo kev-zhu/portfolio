@@ -3,6 +3,7 @@
   /* background-color: lightblue; */
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
 
 .skills-header {
@@ -12,23 +13,10 @@
   text-align: center;
 }
 
-/* .skills-container {
-  --item-per-row: 5;
-
-  display: grid;
-  grid-template-columns: repeat(var(--item-per-row), 1fr);
-  row-gap: 1rem;
-  column-gap: 1rem;
-
-  padding: 2rem;
-} */
-
 .skills-container {
   flex-wrap: wrap;
-
   justify-content: center;
   align-items: center;
-  
   padding: 1rem;
 }
 

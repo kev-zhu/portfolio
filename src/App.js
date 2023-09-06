@@ -18,7 +18,7 @@ const App = () => {
       }
     }, {
       //figure out threshold amount later? --amt before highlighted on navbar
-      threshold: 0.75,
+      threshold: 1,
     })
 
     const sections = document.querySelectorAll('[data-section]')
@@ -60,7 +60,6 @@ const App = () => {
 
   return (
     <div>
-      {console.log(activeSection)}
       {setActive(activeSection)}
       <Header scroll={clickScrollToPage} />
       <Body scroll={clickScrollToPage} />

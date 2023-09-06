@@ -2,5 +2,6 @@
   position: relative;
   top: -4.75em;
   width: min(100%, 1500px);
+  min-width: 300px;
   margin: auto;
 }
