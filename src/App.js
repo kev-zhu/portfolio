@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 
-import Header from './components/header'
-import Body from './components/body'
+import Header from './components/Header'
+import Body from './components/Body'
 
 import './css/main.css'
 
@@ -17,7 +17,8 @@ const App = () => {
         setActiveSection(visibleSection.id)
       }
     }, {
-      threshold: 1,
+      //account for one px lost at the end for contact bc @ end of page
+      threshold: .99,
     })
 
     const sections = document.querySelectorAll('[data-section]')

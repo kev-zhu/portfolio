@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
-import NavBar from './navbar'
-import About from './about'
-import Skills from './skills'
-import Projects from './projects'
-import Contact from './contact'
+import NavBar from './Navbar'
+import About from './About'
+import Skills from './Skills'
+import Projects from './Projects'
+import Contact from './Contact'
 
 import '../css/body.css'
 
@@ -16,8 +16,8 @@ const Body = ({ scroll }) => {
       <NavBar scroll={scroll}/>
       <div className='body-content'>
         <About />
-        <Skills setAP={setAP} />
-        <Projects ap={ap} setAP={setAP} />
+        <Skills setAP={setAP} scroll={scroll} />
+        <Projects ap={ap} scroll={scroll} />
         <Contact />
       </div>
 

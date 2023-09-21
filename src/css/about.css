@@ -5,8 +5,8 @@
   align-items: center;
   flex-wrap: wrap;
 
-  background-color: green;
-  padding: 7rem 3rem;
+  background-color: var(--bg1);
+  padding: 4rem;
 }
 
 .about-container > * {
@@ -24,7 +24,7 @@
 .self-info {
   background-color: lightgreen;
   min-width: 250px;
-  width: 40%;
+  width: 50%;
 
   font-size: 1.5rem;
 }

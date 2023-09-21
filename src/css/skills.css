@@ -1,9 +1,10 @@
 #skills {
   flex-direction: column;
-  /* background-color: lightblue; */
   justify-content: center;
   align-items: center;
   padding: 2rem;
+
+  background-color: var(--bg2);
 }
 
 .skills-header {
@@ -21,7 +22,23 @@
 }
 
 .item {
-  background-color: lightgray;
+  --gap: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
   width: 150px;
   aspect-ratio: 1;
 } 
+
+.item > img { 
+  width: 80%;
+}
+
+.item-info {
+  width: fit-content;
+  height: auto;
+  text-align:center;
+  font-size: 1.25rem;
+}

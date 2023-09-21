@@ -1,6 +1,8 @@
 .body-container {
+  --bg1: rgb(230,230,230);
+  --bg2: rgb(220,220,220);
+
   position: relative;
-  top: -4.75em;
   width: min(100%, 1500px);
   min-width: 300px;
   margin: auto;

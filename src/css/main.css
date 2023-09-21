@@ -1,6 +1,5 @@
 body {
   --primary-background-color: white;
-  --secondary-background-color: lightgrey;
   --font-color: black;
   --animation-timing: 200ms ease-in-out;
 
@@ -9,7 +8,7 @@ body {
 }
 
 /* mainly for resizing of about page items on bigger screens*/
-@media only screen and (max-width: 1020px) {
+@media only screen and (max-width: 1052px) {
   .about-container {
     --gap: 3rem;
     padding: 3rem;
@@ -102,6 +101,10 @@ body {
   .item {
     width: 100px;
   } 
+
+  .item-info {
+    font-size: 1rem;
+  }
 }
 
 /* for small screens */
@@ -111,15 +114,23 @@ body {
   }
 
   #skills {
-    padding: 2rem;
+    padding: 0;
   }
 
   .item {
     width: 75px;
   }
+
+  .item-info {
+    font-size: 0.75rem;
+  }
 }
 
-
+@media only screen and (max-width: 600px) {
+  .self {
+    aspect-ratio: 1;
+  }
+}
 
 
 .flex {

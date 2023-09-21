@@ -1,8 +1,11 @@
 import { useEffect, useRef, useCallback } from 'react'
 
+import Project from './Project'
+
+import projectList from '../projects'
 import '../css/projects.css'
 
-const Projects = ({ ap }) => {
+const Projects = ({ ap, scroll }) => {
   //starting out panel
   const activePanel = useRef(0)
   const panelCount = useRef(null)
@@ -61,7 +64,7 @@ const Projects = ({ ap }) => {
     setPanelActive(ap)
   }, [ap, setPanelActive])
 
-  
+
   const setStartingPanel = () => {
     if (document.querySelectorAll('.active-panel').length === 0) {
       const projectPanels = document.querySelectorAll('.project-sample')
@@ -147,30 +150,69 @@ const Projects = ({ ap }) => {
     }, 250)
   }
 
+  const showDemo = (projectId) => {
+    console.log(projectId)
+    const demoContainer = document.querySelector('.demo-container')
+    demoContainer.style.height = '60vh'
+
+    const demoClose = document.querySelector('.demo-close')
+    demoClose.style.opacity = '1'
+    scroll('demo')
+
+    console.log(`loading project Ddemo for project #${projectId || 'test'}`)
+  }
+
+  const hideDemo = () => {
+    const demoContainer = document.querySelector('.demo-container')
+    demoContainer.style.height = '0'
+
+    const demoClose = document.querySelector('.demo-close')
+    demoClose.style.opacity = '0'
+
+    scroll('projects')
+  }
+
   return (
-    <div className='flex' id='projects' data-section='projects'>
-      <p className='projects-header'>Projects</p>
+    <div>
+      <div className='flex' id='projects' data-section='projects'>
+        <p className='projects-header'>Projects</p>
 
-      <div className='carousel-container'>
+        <button onClick={() => showDemo()}>test</button>
 
-        <div className='carousel'>
-          <ul className='carousel-content'>
-            <li className='project-sample' onClick={() => {setPanelActive(0)}}>1</li>
-            <li className='project-sample' onClick={() => {setPanelActive(1)}}>2</li>
-            <li className='project-sample' onClick={() => {setPanelActive(2)}}>3</li>
-            <li className='project-sample' onClick={() => {setPanelActive(3)}}>4</li>
-            <li className='project-sample' onClick={() => {setPanelActive(4)}}>5</li>
-          </ul>
-        </div>
+        <div className='carousel-container'>
+          <div className='carousel'>
+            {/* loop through -- for each, index++ for setPanelActive for each project in file to set up onClick */}
+            <ul className='carousel-content'>
 
-        <div className='carousel-btns'>
-          <button className='carousel-btn prev' onClick={prevPanel}>&#10094;</button>
-          <button className='carousel-btn next' onClick={nextPanel}>&#10095;</button>
+              {projectList.projects.map(project =>
+                <li key={project.title} className='project-sample' onClick={() => { setPanelActive(project.projectNumber - 1)}}>
+                  <Project baseFolder={projectList.base} folder={project.folder} main={project.main} alt={project.alt}/>
+                </li>
+              )}
+
+            </ul>
+          </div>
+
+          <div className='carousel-btns'>
+            <button className='carousel-btn prev' onClick={prevPanel}>&#10094;</button>
+            <button className='carousel-btn next' onClick={nextPanel}>&#10095;</button>
+          </div>
         </div>
 
       </div>
 
+      <div className='demo-container' id='demo'>
+        {/* svg icon here later */}
+        <button className='demo-close' onClick={hideDemo}>&#10005;</button>
+
+        <div className='project-demo flex'>
+          <div className='project-info'>a</div>
+          <div className='project-media'></div>
+        </div>
+      </div>
+
     </div>
+
   )
 }
 

@@ -1,21 +1,20 @@
+import Skill from './Skill'
+
+import skillList from '../skills'
 import '../css/skills.css'
 
-const Skills = ({ setAP }) => {
+const Skills = ({ setAP, scroll }) => {
+
   return (
     <div className='flex' id='skills' data-section='skills'>
       <p className='skills-header'>Skills</p>
 
       <div className='skills-container flex'>
-        <div className='item' onClick={() => {setAP(0)}}>1</div>
-        <div className='item' onClick={() => {setAP(1)}}>2</div>
-        <div className='item' onClick={() => {setAP(2)}}>3</div>
-        <div className='item' onClick={() => {setAP(3)}}>4</div>
-        <div className='item' onClick={() => {setAP(4)}}>5</div>
-        <div className='item'></div>
-        <div className='item'></div>
-        <div className='item'></div>
-        <div className='item'></div>
-        <div className='item'></div>
+        {
+          skillList.file_names.map(skill =>
+            <Skill key={skill.name} baseFolder={skillList.base} skillInfo={skill} setAP={setAP} scroll={scroll} />
+          )
+        }
       </div>
     </div>
   )

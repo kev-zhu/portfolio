@@ -91,7 +91,6 @@
 
 .nav-hamburger-menu:has(input:checked) {
   width: var(--hamburger-height)
-
 }
 
 .nav-hamburger-menu:has(input:checked)::before {
