@@ -18,7 +18,7 @@ const App = () => {
       }
     }, {
       //account for one px lost at the end for contact bc @ end of page
-      threshold: .99,
+      threshold: .75,
     })
 
     const sections = document.querySelectorAll('[data-section]')

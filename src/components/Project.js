@@ -1,4 +1,4 @@
-const Project = ({ baseFolder, folder, main, alt }) => {
+const Project = ({ baseFolder, folder, main, alt, showDemo, githubLink }) => {
  
   const setUpImg = () => {
     return <img src={baseFolder + folder + main} alt={`${alt} - (Main)`}/>
@@ -11,8 +11,25 @@ const Project = ({ baseFolder, folder, main, alt }) => {
   }
 
   const fileType = main.split('.').pop()
+
+  const openGithub = () => {
+    window.open(githubLink, '_blank')
+  }
   
-  return fileType === 'png' ? setUpImg() : setUpVideo()
+  return (
+    <div className='project-main'>
+      {fileType === 'png' ? setUpImg() : setUpVideo()}
+      <div className="hover-active">
+        <div className='project-main-buttons'>
+          <button onClick={showDemo}>Show Demo</button>
+          <span>/</span>
+          <button onClick={openGithub}>GitHub</button>
+
+        </div>
+
+      </div>
+    </div>
+  )
 }
 
 export default Project

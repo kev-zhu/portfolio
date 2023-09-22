@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef, useCallback, useState } from 'react'
 
 import Project from './Project'
 
@@ -7,8 +7,11 @@ import '../css/projects.css'
 
 const Projects = ({ ap, scroll }) => {
   //starting out panel
+  const transitionTime = 500
+
   const activePanel = useRef(0)
   const panelCount = useRef(null)
+  const [projectDemo, setProjectDemo] = useState(0)
 
   useEffect(() => {
     const adjustCarouselContainerHeight = (height) => {
@@ -42,7 +45,7 @@ const Projects = ({ ap, scroll }) => {
     //resizing delay to account for change in process resizing calculations?
     window.addEventListener('resize', () => {
       clearTimeout(resizeWaitTime)
-      resizeWaitTime = setTimeout(resizePanels, 500)
+      resizeWaitTime = setTimeout(resizePanels, transitionTime)
     })
 
     return () => {
@@ -55,9 +58,11 @@ const Projects = ({ ap, scroll }) => {
     const oldActive = activePanel.current
     activePanel.current = targetIndex
 
+    if (oldActive === activePanel.current) return
+
     const shift = (oldActive + activePanel.current) % panelCount.count
-    changeActivePanel(shift)
     rotatePanel()
+    changeActivePanel(shift)
   }, [])
 
   useEffect(() => {
@@ -74,17 +79,15 @@ const Projects = ({ ap, scroll }) => {
 
   const prevPanel = () => {
     activePanel.current = (activePanel.current === 0 ? panelCount.count - 1 : activePanel.current - 1) % panelCount.count
-
-    changeActivePanel(1)
     rotatePanel()
+    changeActivePanel(1)
     pauseBtns()
   }
 
   const nextPanel = () => {
     activePanel.current = (activePanel.current === panelCount.count - 1 ? 0 : activePanel.current + 1) % panelCount.count
-
-    changeActivePanel(-1)
     rotatePanel()
+    changeActivePanel(-1)
     pauseBtns()
   }
 
@@ -95,7 +98,12 @@ const Projects = ({ ap, scroll }) => {
 
     const projectPanels = document.querySelectorAll('.project-sample')
     Array.from(projectPanels).find(panel => panel.classList.contains('active-panel')).classList.toggle('active-panel')
-    projectPanels[activePanel.current % panelCount.count].classList.add('active-panel')
+    const newActive = projectPanels[activePanel.current % panelCount.count]
+    newActive.classList.add('active-panel')
+    newActive.classList.toggle('scrolling')
+    setTimeout(() => {
+      newActive.classList.toggle('scrolling')
+    }, transitionTime)
   }
 
   const rotatePanel = () => {
@@ -147,11 +155,13 @@ const Projects = ({ ap, scroll }) => {
       carouselButtons.forEach(button => {
         button.disabled = false
       })
-    }, 250)
+    }, transitionTime)
   }
 
-  const showDemo = (projectId) => {
-    console.log(projectId)
+  const showDemo = (projectNumber) => {
+    console.log(projectList.projects.find(project => project.projectNumber === projectNumber))
+    setProjectDemo(projectNumber)
+    console.log(projectNumber)
     const demoContainer = document.querySelector('.demo-container')
     demoContainer.style.height = '60vh'
 
@@ -159,7 +169,7 @@ const Projects = ({ ap, scroll }) => {
     demoClose.style.opacity = '1'
     scroll('demo')
 
-    console.log(`loading project Ddemo for project #${projectId || 'test'}`)
+    console.log(`loading project Demo for project #${projectNumber || 'test'}`)
   }
 
   const hideDemo = () => {
@@ -177,16 +187,13 @@ const Projects = ({ ap, scroll }) => {
       <div className='flex' id='projects' data-section='projects'>
         <p className='projects-header'>Projects</p>
 
-        <button onClick={() => showDemo()}>test</button>
-
         <div className='carousel-container'>
           <div className='carousel'>
-            {/* loop through -- for each, index++ for setPanelActive for each project in file to set up onClick */}
             <ul className='carousel-content'>
 
               {projectList.projects.map(project =>
                 <li key={project.title} className='project-sample' onClick={() => { setPanelActive(project.projectNumber - 1)}}>
-                  <Project baseFolder={projectList.base} folder={project.folder} main={project.main} alt={project.alt}/>
+                  <Project baseFolder={projectList.base} folder={project.folder} main={project.main} alt={project.alt} showDemo={() => {showDemo(project.projectNumber)}} githubLink={project.github} />
                 </li>
               )}
 
@@ -202,11 +209,14 @@ const Projects = ({ ap, scroll }) => {
       </div>
 
       <div className='demo-container' id='demo'>
-        {/* svg icon here later */}
         <button className='demo-close' onClick={hideDemo}>&#10005;</button>
 
         <div className='project-demo flex'>
-          <div className='project-info'>a</div>
+          <div className='project-info'>
+            <h3>Title {projectDemo}</h3>
+            <p>info</p>
+            <p>skills</p>
+          </div>
           <div className='project-media'></div>
         </div>
       </div>

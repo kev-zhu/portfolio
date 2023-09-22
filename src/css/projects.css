@@ -38,7 +38,6 @@
 .project-sample {
   overflow: clip;
   position: absolute;
-  background-color: lightseagreen;
   top: 0;
   bottom: 0;
   left: 0;
@@ -55,7 +54,6 @@
 }
 
 .project-sample.active-panel {
-  background-color: lightgrey;
   scale: 1.15;
   filter: drop-shadow(0 0 2rem black);
   border-radius: 0.5rem;
@@ -63,10 +61,55 @@
   transition: all var(--transiton-time) ease-in-out;
 } 
 
-.project-sample > * {
+.project-main {
+  position: relative;
+}
+
+.project-main > img, .project-main > video {
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
+}
+
+.hover-active { 
+  display: none;
+}
+
+.active-panel:not(.scrolling):hover > .project-main > img,
+.active-panel:not(.scrolling):hover > .project-main > video { 
+  display: block;
+  filter: brightness(50%);
+}
+
+.active-panel:not(.scrolling):hover > .project-main > .hover-active {
+  display: block
+}
+
+.project-title { 
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.project-main-buttons { 
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.project-main-buttons > * { 
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.949);
+}
+
+.project-main-buttons > button { 
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: hsla(0, 0%, 100%, 0);
 }
 
 .carousel-btns {
@@ -137,6 +180,7 @@
   background: lightgrey;
   height: 80%;
   width: max(30%, 250px);
+  font-size: 1.5rem;
 }
 
 .project-media { 
