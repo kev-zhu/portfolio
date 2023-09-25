@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback, useState } from 'react'
+import { useEffect, useRef, useCallback, useState, createElement } from 'react'
 
 import Project from './Project'
 
@@ -11,7 +11,7 @@ const Projects = ({ ap, scroll }) => {
 
   const activePanel = useRef(0)
   const panelCount = useRef(null)
-  const [projectDemo, setProjectDemo] = useState(0)
+  const [projectDemo, setProjectDemo] = useState({})
 
   useEffect(() => {
     const adjustCarouselContainerHeight = (height) => {
@@ -159,17 +159,31 @@ const Projects = ({ ap, scroll }) => {
   }
 
   const showDemo = (projectNumber) => {
-    console.log(projectList.projects.find(project => project.projectNumber === projectNumber))
-    setProjectDemo(projectNumber)
-    console.log(projectNumber)
+    setProjectDemo(projectList.projects.find(project => project.projectNumber === projectNumber))
     const demoContainer = document.querySelector('.demo-container')
     demoContainer.style.height = '60vh'
 
     const demoClose = document.querySelector('.demo-close')
     demoClose.style.opacity = '1'
-    scroll('demo')
+  }
 
-    console.log(`loading project Demo for project #${projectNumber || 'test'}`)
+  const getProjectMedia = (projectNumber) => {
+    const projectTarget = projectList.projects.find(project => project.projectNumber === projectNumber)
+    if (!projectTarget) return
+
+    document.querySelector('.project-demo').scrollLeft = 0
+
+    const createMediaElement = (file) => {
+      if (file.split('.').pop() === 'png') {
+        return createElement('img', {src: file, key: file}, null)
+      } else {
+        return createElement('video', {src: file, key: file, type:'video/mp4', autoPlay: 1, loop: 1})
+      }
+    }
+
+    return <>
+    { projectTarget.media.map(item => createMediaElement(projectList.base + projectTarget.folder + item))}
+    </>
   }
 
   const hideDemo = () => {
@@ -213,11 +227,15 @@ const Projects = ({ ap, scroll }) => {
 
         <div className='project-demo flex'>
           <div className='project-info'>
-            <h3>Title {projectDemo}</h3>
-            <p>info</p>
-            <p>skills</p>
+            <h3>{projectDemo.title || 'No Demo Title'}</h3>
+            <p>{projectDemo.skills?.join(', ') || 'No Demo Skills'}</p>
+            <br></br>
+            <p>{projectDemo.info || 'No Demo Info'}</p>
+
           </div>
-          <div className='project-media'></div>
+          <div className='project-media'>
+            {getProjectMedia(projectDemo.projectNumber)}
+          </div>
         </div>
       </div>
 
