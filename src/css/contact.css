@@ -17,9 +17,9 @@
 
 .contact-message {
   position: absolute;
-  width: 50%;
+  width: 80%;
   height: 3rem;
-  top: 6rem;
+  top: 7rem;
   line-height: 3rem;
   border-radius: 5px;
   font-size: 1.5rem;
@@ -103,4 +103,12 @@
   height: auto;
   padding: 1rem;
   resize: none;
+}
+
+.icon, .icon > a {
+  color: black
+}
+
+.icon > a:hover { 
+  color: lightgrey
 }

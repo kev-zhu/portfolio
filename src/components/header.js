@@ -9,7 +9,7 @@ const Header = () => {
         <a href='.'>Kevin Zhu</a>
       </div> */}
 
-      <p>Hello, my name is Kevin Zhu, a self-taught web-developer. (more to this later)</p>
+      <p>Hello, my name is Kevin Zhu, a passionate self-taught programmer driven to innovate and solve with code.</p>
     </div>
   )
 }

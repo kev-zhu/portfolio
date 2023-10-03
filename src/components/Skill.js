@@ -3,7 +3,9 @@ const Skill = ({ baseFolder, skillInfo , setAP, scroll }) => {
 
   const handleSkillClick = (projectId) => {
     //ensure the it is a number
-    setAP(Number(projectId))
+    if (projectId !== null) {
+      setAP(Number(projectId))
+    }
     scroll('projects')
   }
 

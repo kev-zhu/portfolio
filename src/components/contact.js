@@ -1,5 +1,9 @@
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationDot, faEnvelope, faPhone, faFile } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+
 
 import '../css/contact.css'
 
@@ -39,11 +43,30 @@ const Contact = () => {
 
       <div className='contact-container flex'>
         <div className='personal-info'>
-          <div>Based in: Alameda, California</div>
-          <div>kevinzhu35@gmail.com</div>
-          <div>(510) 305-4195</div>
-          <div>Resume</div>
-          <div>Icons</div>
+          <div>       
+             <FontAwesomeIcon icon={faLocationDot} /> Alameda, California
+          </div>
+          <div>
+            <FontAwesomeIcon icon={faEnvelope} /> kevinzhu35@gmail.com
+          </div>
+          <div>
+            <FontAwesomeIcon icon={faPhone} /> (510) 305-4195
+            </div>
+          <div className='icon'>
+            <a href='/media/Resume.pdf' target='_blank'rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faFile}/> Resume
+            </a>
+          </div>
+          <div className='icon'>
+            <a href='https://github.com/kev-zhu' target='_blank'rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faGithub}/> GitHub
+            </a>
+          </div>
+          <div className='icon'>
+            <a href='http://www.linkedin.com/in/kevinzhuu' target='_blank'rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faLinkedin}/> LinkedIn
+            </a>
+          </div>
         </div>
         <div className='messaging'>
           <form className='messaging-form flex' ref={form} onSubmit={sendEmail} autoComplete="off">

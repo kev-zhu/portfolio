@@ -161,7 +161,8 @@ const Projects = ({ ap, scroll }) => {
   const showDemo = (projectNumber) => {
     setProjectDemo(projectList.projects.find(project => project.projectNumber === projectNumber))
     const demoContainer = document.querySelector('.demo-container')
-    demoContainer.style.height = '60vh'
+    // demoContainer.style.height = '60vh'
+    demoContainer.style.display = 'block'
 
     const demoClose = document.querySelector('.demo-close')
     demoClose.style.opacity = '1'
@@ -188,7 +189,8 @@ const Projects = ({ ap, scroll }) => {
 
   const hideDemo = () => {
     const demoContainer = document.querySelector('.demo-container')
-    demoContainer.style.height = '0'
+    // demoContainer.style.height = '0'
+    demoContainer.style.display = 'none'
 
     const demoClose = document.querySelector('.demo-close')
     demoClose.style.opacity = '0'

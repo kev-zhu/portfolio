@@ -15,7 +15,9 @@ body {
   }
 
   .self {
-    aspect-ratio: 1.75;
+    aspect-ratio: 1;
+    object-position: 10% 10%;
+    /* height: 500px; */
   }
 
   .self, .self-info {
@@ -107,6 +109,12 @@ body {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .project-main-buttons > * { 
+    font-size: 0.9rem;
+  }
+}
+
 /* for small screens */
 @media only screen and (max-width: 450px) {
   .project-sample.active-panel {
@@ -125,13 +133,6 @@ body {
     font-size: 0.75rem;
   }
 }
-
-@media only screen and (max-width: 600px) {
-  .self {
-    aspect-ratio: 1;
-  }
-}
-
 
 .flex {
   display: flex;

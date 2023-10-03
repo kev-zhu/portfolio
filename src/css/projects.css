@@ -36,9 +36,6 @@
 }
 
 .project-sample {
-  /* delete later */
-  border: 1px solid white;
-
   overflow: clip;
   position: absolute;
   top: 0;
@@ -146,7 +143,7 @@
 
 .demo-container { 
   position: relative;
-  /* display: none; */
+  display: none;
   background-color: white;
   height: 60vh;
 }
@@ -181,7 +178,7 @@
 .project-info {
   flex: 1 0 auto;
   height: 90%;
-  width: max(30%, 300px);
+  width: max(30%, 320px);
   font-size: 1.5rem;
   padding: 1rem;
 }
@@ -192,6 +189,7 @@
   gap: 1rem;
   flex: 0 0 auto;
   height: 90%;
+  padding: 0 1rem;
 }
 
 .project-media > * {

@@ -14,17 +14,17 @@
 }
 
 .self {
-  background-color: red;
+  /* background-color: red; */
   width: 350px;
   min-width: 250px;
   aspect-ratio: 3/4;
   flex: 0 0 auto;
+  object-fit: cover;
+  object-position: 10% 10%;
 }
 
 .self-info {
-  background-color: lightgreen;
   min-width: 250px;
   width: 50%;
-
   font-size: 1.5rem;
 }

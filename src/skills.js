@@ -47,25 +47,25 @@ const skills = {
       name: 'MongoDB',
       file_name: 'mongodb.svg',
       alt: 'mongodb icon',
-      projectDemoInd: 3
+      projectDemoInd: null
     },
     {
       name: 'Express',
       file_name: 'express.svg',
       alt: 'express icon',
-      projectDemoInd: 3
+      projectDemoInd: null
     },
     {
       name: 'React',
       file_name: 'react.svg',
       alt: 'react icon',
-      projectDemoInd: 3
+      projectDemoInd: null
     },
     {
       name: 'Node',
       file_name: 'nodejs.svg',
       alt: 'nodejs icon',
-      projectDemoInd: 3
+      projectDemoInd: null
     }
   ]
 }
