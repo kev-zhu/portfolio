@@ -1,5 +1,5 @@
 const projects = {
-  base: '/media/projects/',
+  base: '/portfolio/media/projects/',
   projects: [
     {
       projectNumber: 1,

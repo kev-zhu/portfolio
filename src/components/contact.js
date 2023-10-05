@@ -53,7 +53,7 @@ const Contact = () => {
             <FontAwesomeIcon icon={faPhone} /> (510) 305-4195
             </div>
           <div className='icon'>
-            <a href='/media/Resume.pdf' target='_blank'rel='noopener noreferrer'>
+            <a href='/portfolio/Resume.pdf' target='_blank'rel='noopener noreferrer'>
               <FontAwesomeIcon icon={faFile}/> Resume
             </a>
           </div>

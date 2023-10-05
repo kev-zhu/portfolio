@@ -36,7 +36,9 @@ const NavBar = ({ scroll }) => {
         <li className='li-skills' onClick={() => { scroll('skills') }}>Skills</li>
         <li className='li-projects' onClick={() => { scroll('projects') }}>Projects</li>
         <li className='li-contact' onClick={() => { scroll('contact') }}>Contact</li>
-        <li>Resume</li>
+        <li>
+          <a href='/portfolio/Resume.pdf' target='_blank'rel='noopener noreferrer' style={{color: 'black'}}>Resume</a>
+        </li>
       </ul>
     </div>
   )

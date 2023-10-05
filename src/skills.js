@@ -1,5 +1,5 @@
 const skills = {
-  base: '/media/skills/',
+  base: '/portfolio/media/skills/',
   file_names: [
     {
       name: 'Python',
