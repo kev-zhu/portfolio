@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationDot, faEnvelope, faPhone, faFile } from '@fortawesome/free-solid-svg-icons'
+import { faLocationDot, faEnvelope, faFile } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 
@@ -17,18 +17,18 @@ const Contact = () => {
 
     emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
       .then((result) => {
-        formMessage.innerHTML='Email has been sent'
+        formMessage.innerHTML = 'Email has been sent'
         formMessage.classList.add('success')
         formMessage.hidden = false
         e.target.reset()
       }, (error) => {
-        formMessage.innerHTML='Error sending email. Please try again later.'
+        formMessage.innerHTML = 'Error sending email. Please try again later.'
         formMessage.classList.add('error')
         formMessage.hidden = false
       });
 
     setTimeout(() => {
-      formMessage.innerHTML=''
+      formMessage.innerHTML = ''
       formMessage.classList.remove('success')
       formMessage.classList.remove('error')
       formMessage.hidden = true
@@ -43,28 +43,25 @@ const Contact = () => {
 
       <div className='contact-container flex'>
         <div className='personal-info'>
-          <div>       
-             <FontAwesomeIcon icon={faLocationDot} /> Alameda, California
+          <div>
+            <FontAwesomeIcon icon={faLocationDot} /> Alameda, California
           </div>
           <div>
             <FontAwesomeIcon icon={faEnvelope} /> kevinzhu35@gmail.com
           </div>
-          <div>
-            <FontAwesomeIcon icon={faPhone} /> (510) 305-4195
-            </div>
           <div className='icon'>
-            <a href='/portfolio/Resume.pdf' target='_blank'rel='noopener noreferrer'>
-              <FontAwesomeIcon icon={faFile}/> Resume
+            <a href='/portfolio/Resume.pdf' target='_blank' rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faFile} /> Resume
             </a>
           </div>
           <div className='icon'>
-            <a href='https://github.com/kev-zhu' target='_blank'rel='noopener noreferrer'>
-              <FontAwesomeIcon icon={faGithub}/> GitHub
+            <a href='https://github.com/kev-zhu' target='_blank' rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faGithub} /> GitHub
             </a>
           </div>
           <div className='icon'>
-            <a href='http://www.linkedin.com/in/kevinzhuu' target='_blank'rel='noopener noreferrer'>
-              <FontAwesomeIcon icon={faLinkedin}/> LinkedIn
+            <a href='http://www.linkedin.com/in/kevinzhuu' target='_blank' rel='noopener noreferrer'>
+              <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
             </a>
           </div>
         </div>

@@ -34,17 +34,17 @@ const projects = {
       info: 'This simple dictionary application, assigned by FrontEnd Mentor, uses the dictionary API to retrieve data and display it similiarly to many dictionary-based websites. While this is a straight-forward project, this application was built from scratch for me to practice and learn more about HTML/CSS/Javascript.',
       skills: ['HTML, CSS, Javascript']
     },
-    // {
-    //   projectNumber: 4,
-    //   folder: '',
-    //   main: '',
-    //   media: [],
-    //   title: 'Phonebook',
-    //   alt: 'Phonebook Media Files',
-    //   github: '',
-    //   info: '',
-    //   skills: ['MongoDB', 'Express', 'React', 'Node']
-    // }
+    {
+      projectNumber: 4,
+      folder: 'phonebook/',
+      main: 'phonebook-main.png',
+      media: ['phonebook-main.png', 'phonebook-add.png', 'phonebook-mobile.png', 'phonebook-mobile-add.png'],
+      title: 'Phonebook App',
+      alt: 'Phonebook Media Files',
+      github: 'https://github.com/kev-zhu/phonebook',
+      info: 'A project assigned by Full Stack Open that utilizes the MERN stack to develop a fully functioning phonebook application. While this assignment mainly focused on functional aspects of the project, I further added stylistic components to make it appear more user friendly.',
+      skills: ['MongoDB', 'Express', 'React', 'Node']
+    }
   ]
 }
 
