@@ -24,3 +24,45 @@
   
   color: var(--font-color);
 }
+
+.quick-links-container { 
+  position: absolute;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 1rem;
+
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  color: hsla(0, 0%, 100%, 0.7);
+}
+
+.quick-links-container > * {
+  cursor: pointer; 
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.quick-hover {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.hover-icon {
+  display: none;
+  border-radius: 50%; 
+}
+
+.hover-icon > a {
+  color: hsla(0, 0%, 100%, 0.7);
+}
+
+.hover-icon:hover, .hover-icon > a:hover {
+  color: white
+  
+}
