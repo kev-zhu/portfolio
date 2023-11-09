@@ -5,7 +5,7 @@ import Project from './Project'
 import projectList from '../projects'
 import '../css/projects.css'
 
-const Projects = ({ ap, scroll }) => {
+const Projects = ({ ap, setAP, scroll }) => {
   //starting out panel
   const transitionTime = 500
 
@@ -61,9 +61,10 @@ const Projects = ({ ap, scroll }) => {
     if (oldActive === activePanel.current) return
 
     const shift = (oldActive + activePanel.current) % panelCount.count
+    setAP(activePanel.current)
     rotatePanel()
     changeActivePanel(shift)
-  }, [])
+  }, [setAP])
 
   useEffect(() => {
     setPanelActive(ap)
@@ -232,7 +233,9 @@ const Projects = ({ ap, scroll }) => {
             <h3>{projectDemo.title || 'No Demo Title'}</h3>
             <p>{projectDemo.skills?.join(', ') || 'No Demo Skills'}</p>
             <br></br>
-            <p>{projectDemo.info || 'No Demo Info'}</p>
+            <div>
+              {projectDemo.info || 'No Demo Info'}
+            </div>
 
           </div>
           <div className='project-media'>

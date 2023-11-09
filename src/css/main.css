@@ -113,6 +113,10 @@ body {
   .project-main-buttons > * { 
     font-size: 0.9rem;
   }
+
+  .demo-container {
+    height: 80vh;
+  }
 }
 
 /* for small screens */

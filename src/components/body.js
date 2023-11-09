@@ -16,8 +16,8 @@ const Body = ({ scroll }) => {
       <NavBar scroll={scroll}/>
       <div className='body-content'>
         <About />
-        <Skills setAP={setAP} scroll={scroll} />
-        <Projects ap={ap} scroll={scroll} />
+        <Skills ap={ap} setAP={setAP} scroll={scroll} />
+        <Projects ap={ap} setAP={setAP} scroll={scroll} />
         <Contact />
       </div>
 

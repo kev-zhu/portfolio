@@ -181,6 +181,14 @@
   width: max(30%, 320px);
   font-size: 1.5rem;
   padding: 1rem;
+
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.project-info::-webkit-scrollbar { 
+  display: none;
 }
 
 .project-media { 

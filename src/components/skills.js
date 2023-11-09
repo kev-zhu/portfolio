@@ -3,7 +3,7 @@ import Skill from './Skill'
 import skillList from '../skills'
 import '../css/skills.css'
 
-const Skills = ({ setAP, scroll }) => {
+const Skills = ({ ap, setAP, scroll }) => {
 
   return (
     <div className='flex' id='skills' data-section='skills'>
@@ -12,7 +12,7 @@ const Skills = ({ setAP, scroll }) => {
       <div className='skills-container flex'>
         {
           skillList.file_names.map(skill =>
-            <Skill key={skill.name} baseFolder={skillList.base} skillInfo={skill} setAP={setAP} scroll={scroll} />
+            <Skill key={skill.name} baseFolder={skillList.base} skillInfo={skill} ap={ap} setAP={setAP} scroll={scroll} />
           )
         }
       </div>
