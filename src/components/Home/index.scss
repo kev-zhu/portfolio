@@ -4,7 +4,7 @@
     left: 10%;
     top: 50%;
     transform: translateY(-50%);
-    width: 50%;
+    width: 30%;
     max-height: 90%;
 
     .flat-button {
@@ -34,39 +34,15 @@
     margin: 0;
     font-family: 'Coolvetica';
     font-weight: 400;
+  }
 
-    &::before {
-      content: '<h1>';
-      font-family: 'La Belle Aurore';
-      color: #ffd700;
-      font-size: 18px;
-      position: absolute;
-      margin-top: -40px;
-      left: 15px;
-      opacity: 0.6;
-    }
-
-    &::after {
-      content: "<h1/>";
-      font-family: 'La Belle Aurore';
-      color: #ffd700;
-      font-size: 18px;
-      position: absolute;
-      margin-top: 18px;
-      margin-left: 20px;
-      opacity: 0.6;   
-    }
+  h2 {
+    color: #adadad;
+    margin-top: 20px;
+    font-weight: 400px;
+    font-size: 11px;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+    animation: fadeIn 1s 1.8s backwards;
   }
 }
-
-h2 {
-  color: #adadad;
-  margin-top: 20px;
-  font-weight: 400px;
-  font-size: 11px;
-  font-family: sans-serif;
-  letter-spacing: 3px;
-  animation: fadeIn 1s 1.8s backwards;
-}
-
- 

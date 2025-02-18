@@ -2,12 +2,12 @@ import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
 import { useState, useEffect, useRef } from 'react'
 import emailjs from '@emailjs/browser'
-import { MapContainer, TileLayer, Marker, Popup, Circle } from 'react-leaflet'
+import { MapContainer, TileLayer, Circle } from 'react-leaflet'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const refForm = useRef()
-  const miles=40
+  const miles = 5
 
   useEffect(() => {
     setTimeout(() => {
@@ -75,7 +75,7 @@ const Contact = () => {
       </div>
 
       <div className='map-wrap'>
-        <MapContainer center={[37.76477, -122.24327]} zoom={9}>
+        <MapContainer center={[37.76477, -122.24327]} zoom={12}>
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           <Circle center={[37.76477, -122.24327]} radius={miles * 1609.344}/>
         </MapContainer>

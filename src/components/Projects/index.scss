@@ -1,0 +1,30 @@
+.project-container { 
+  position: relative;
+  padding: 20px;
+  float: right;
+  width: 60%;
+  height: 100%;
+  z-index: 10;
+  overflow: scroll;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.project {
+  text-decoration: none;
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding-bottom: 20px;
+
+  img,
+  video {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
