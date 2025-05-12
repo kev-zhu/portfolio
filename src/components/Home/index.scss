@@ -1,11 +1,17 @@
-.home-page {
+.home-page {  
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: auto;
+  position: relative;
+
   .text-zone {
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30%;
-    max-height: 90%;
+    position: sticky;
+    top: 10%;
+    width: calc(40% - 60px);
+    height: fit-content;
+    padding: 5%;
+    box-sizing: border-box;
+    float: left; 
 
     .flat-button {
       color: #ffd700;

@@ -1,0 +1,97 @@
+.project-info-container {
+  position: absolute;
+  height: 100%;
+}
+
+.project-info {
+  position: sticky;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  background-color: white;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  height: auto;
+  height: 100vh;
+  z-index: 100;
+}
+
+.project-return-container {
+  display: flex;
+  justify-content: space-between;
+  color:#adadad;
+  width: 100%;
+
+  * {
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
+
+.expanded-data {
+  .project-title,
+  .brief-data,
+  .project-media,
+  .project-skills {
+    padding: 0 20px;
+  }
+
+  * {
+    color: #adadad;
+  }
+
+  .project-gh {
+    position: sticky;
+    display: block;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    width: 100%;
+    background-color: #484848;
+    text-align: center;
+  }
+}
+
+.project-gh {
+  span:hover {
+    text-decoration: underline;
+  }
+  
+  svg {
+    margin-left: 5px;
+  }
+}
+
+
+// side bar info animation
+.side-open {
+  animation: slideIn .5s forwards;
+}
+
+.side-close {
+  animation: slideOut .5s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    display: none;
+    transform: translateX(100%);
+  }
+
+  100% {
+    display: block;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    display: block;
+    transform: translateX(0%);
+  }
+  100% {
+    display: none;
+    transform: translateX(100%);
+  }
+}

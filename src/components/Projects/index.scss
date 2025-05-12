@@ -1,30 +1,106 @@
 .project-container { 
-  position: relative;
-  padding: 20px;
-  float: right;
+  box-sizing: border-box;
   width: 60%;
-  height: 100%;
+  position: relative;
+  height: fit-content;
   z-index: 10;
-  overflow: scroll;
+  float:left;
 
   ul {
     margin: 0;
-    padding: 0;
+    padding: 20px;
   }
 }
 
 .project {
   text-decoration: none;
-  display: flex;
-  width: 100%;
-  height: auto;
-  padding-bottom: 20px;
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+
+
+  video {
+    width: 100%;
+  }
 
   img,
   video {
     display: block;
-    max-height: 100%;
     max-width: 100%;
+    box-shadow: rgba(80, 78, 78, 0.5) 3px 3px 20px;
+  }
+
+  .project-data {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 100%;
+    opacity: 1;
+    padding: 20px;
+
+    * {
+      color: white;
+    }
+
+    .expand-data {
+      cursor: pointer;
+      text-decoration: underline 1px;
+    }
+    
+    .expand-data:hover {
+      color: rgb(93, 160, 227);
+    }
+
+    .project-gh {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 20px;
+    }
   }
 }
 
+h2.project-title {
+  animation: none;
+  font-size: 50px;
+}
+
+.brief-data,
+.expand-data,
+.project-gh {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+
+// hover project animation -- updown
+.project:hover .project-data {
+  animation: show-data .5s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.project:not(:hover) .project-data {
+  animation: remove-data .5s forwards;
+}
+
+@keyframes show-data {
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
