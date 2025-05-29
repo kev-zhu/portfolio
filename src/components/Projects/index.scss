@@ -1,6 +1,5 @@
 .project-container { 
   box-sizing: border-box;
-  width: 60%;
   position: relative;
   height: fit-content;
   z-index: 10;
@@ -8,7 +7,7 @@
 
   ul {
     margin: 0;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
   }
 }
 
@@ -76,6 +75,10 @@ h2.project-title {
 .project-gh {
   text-decoration: none;
   font-size: 20px;
+
+  svg {
+    margin-left: 5px;
+  }
 }
 
 

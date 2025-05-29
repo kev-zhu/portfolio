@@ -3,15 +3,20 @@
   overflow-y: scroll;
   margin: auto;
   position: relative;
+  width: 100%;
+  display: grid;
+  grid: auto / 4fr 6fr;
 
   .text-zone {
     position: sticky;
-    top: 10%;
-    width: calc(40% - 60px);
-    height: fit-content;
+    top: 0;
+    min-height: fit-content;
+    height: 100vh;
+    min-width: 520px;
+    width: 100%;
+    align-content: center;
     padding: 5%;
     box-sizing: border-box;
-    float: left; 
 
     .flat-button {
       color: #ffd700;
@@ -50,5 +55,39 @@
     font-family: sans-serif;
     letter-spacing: 3px;
     animation: fadeIn 1s 1.8s backwards;
+
+    > span::after {
+      content: " / ";
+    }
+  }
+}
+
+// work on font sizing for project + intro
+// med screen
+@media only screen and (max-width: 1200px) {
+  .text-zone {
+    position: relative !important;
+    grid-area: 1 / span 2;
+    height: 90vh !important;
+  }
+
+  .project-container {
+    grid-area: 2 / span 2;
+  }
+}
+
+// small screen
+@media only screen and (max-width: 550px) {
+  .text-zone {
+    min-width: 285px !important;
+    max-width: 285px !important;
+
+    > h2 {
+      width: 250px;
+      
+      > span::after {
+        content: " ";
+      }
+    }
   }
 }

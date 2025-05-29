@@ -6,9 +6,8 @@ import Projects from '../Projects'
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
-  const nameArray = ['K', 'e', 'v', 'i', 'n']
-  const jobArray = ['S','o','f','t','w','a','r','e',' ','E','n','g','i','n','e','e','r']
-
+  const nameArray = 'Kevin'.split('')
+  const titleArray = 'Full-Stack Developer'.split('')
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover')
@@ -29,9 +28,9 @@ const Home = () => {
         <span className={`${letterClass} _14`}>&#160;</span>
         <AnimatedLetters letterClass={letterClass} strArr={nameArray} idx={15} />
         <br/>
-        <AnimatedLetters letterClass={letterClass} strArr={jobArray} idx={19} />
+        <AnimatedLetters letterClass={letterClass} strArr={titleArray} idx={16} />
         </h1>
-        <h2>Self-taught Software Engineer / Code Enthusiast</h2>
+        <h2>Self-taught Software Engineer<span></span>Code Enthusiast</h2>
         <Link to="/contact" className="flat-button">CONTACT ME</Link>
       </div>
       <Projects />

@@ -1,15 +1,43 @@
 import './index.scss'
 import projectList from './projects.js'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import ProjectInfo from '../../ProjectInfo';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
-
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeProject, setActiveProject] = useState(undefined)
-  const mediaRef = useRef()
+  const projectRef = useRef(null)
+
+  const useOutsideAlert = (ref) => {
+    useEffect(() => {
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          closeProjectInfo()
+        }
+      }
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    }, [ref])
+  }
+
+  useOutsideAlert(projectRef)
+  
+  const handleKeyDown = (event) => {
+    if (event.key === 'Escape') {
+      closeProjectInfo()
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  })
 
   const renderImg = (path, alt) => {
     return (
@@ -34,12 +62,12 @@ const Projects = () => {
     setIsOpen(false)
     setTimeout(() => {
       setActiveProject(undefined)
-    }, 1000)
+    }, 500)
   }
 
   return (
-    <div className="project-container">
-      <ProjectInfo isOpen={isOpen} closeProjectInfo={closeProjectInfo} mediaRef={mediaRef} activeProject={activeProject} projectList={projectList} renderImg={renderImg} renderVideo={renderVideo}/>
+    <div className="project-container" ref={projectRef}>
+      <ProjectInfo isOpen={isOpen} closeProjectInfo={closeProjectInfo} activeProject={activeProject} projectList={projectList} renderImg={renderImg} renderVideo={renderVideo}/>
       
       <ul>
         {projectList.projects.map(project => {
