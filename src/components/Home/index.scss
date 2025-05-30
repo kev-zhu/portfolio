@@ -62,17 +62,12 @@
   }
 }
 
-// work on font sizing for project + intro
 // med screen
 @media only screen and (max-width: 1200px) {
   .text-zone {
     position: relative !important;
     grid-area: 1 / span 2;
     height: 90vh !important;
-  }
-
-  .project-container {
-    grid-area: 2 / span 2;
   }
 }
 

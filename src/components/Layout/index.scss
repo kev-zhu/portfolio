@@ -70,3 +70,10 @@
     }
   }
 }
+
+@media only screen and (max-width: 550px) {
+  .page {
+    width: 100%;
+    left: 0px;
+  }
+}

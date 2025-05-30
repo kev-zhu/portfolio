@@ -7,6 +7,13 @@
   z-index: 3;
   min-height: 500px;
 
+
+  --bar-width: 25px;
+  --bar-height: 5px;
+  --hamburger-gap: 3px;
+  --foreground: #333;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+
   .logo {
     display: block;
     padding: 8px 0;
@@ -114,5 +121,147 @@
         }
       }
     }
+  }
+
+  span {
+    display: none;
+  }
+}
+
+.nav-hamburger-menu {
+  padding: 5px;
+  --x-width: calc(var(--hamburger-height) * 1.4142135637);
+
+  display: none;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+
+  position: absolute;
+  z-index: 1000;
+  margin: 0;
+
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+
+  background-color: inherit;
+  border-radius: 5px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.nav-hamburger-menu::before,
+.nav-hamburger-menu input,
+.nav-hamburger-menu::after {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  border-radius: 9999px;
+  transform-origin: left center;
+}
+
+.nav-hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.nav-hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.nav-hamburger-menu:has(input:checked) {
+  width: var(--hamburger-height)
+}
+
+.nav-hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.nav-hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.nav-hamburger-menu:has(input:checked) + .nav-icons {
+  display: block;
+  translate: 0;
+}
+
+
+@media only screen and (max-width: 550px) {
+  .nav-bar {
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    min-height: fit-content;
+    display: flex;
+
+    background-color: white;
+
+    .nav-icons {
+      padding: 20px 0;
+      margin-top: 60px;;
+      position: absolute;
+      background-color: white;
+      width: 70%;
+      right: 0;
+      height: calc(100vh - 6px);
+      translate: 100%;
+      transition: translate 0.5s;
+      opacity: 0.95;
+
+      .logo {
+        display: none;
+      }
+  
+      > nav,
+      > ul {
+        height: fit-content;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        position: relative;
+  
+        a {
+          &::after {
+            display: none;
+          }
+        }
+  
+        * {
+          text-decoration: none;
+          color:#4d4d4e;
+        }
+  
+        svg {
+          display: none;
+        }
+  
+        span {
+          display: block;
+          height: 51px;
+          align-content: center;
+        }
+  
+        li {
+          > a {
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+    }  
+  }
+
+  .nav-hamburger-menu {
+    display: flex;
   }
 }
