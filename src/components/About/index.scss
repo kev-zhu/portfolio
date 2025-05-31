@@ -1,0 +1,11 @@
+.parent {
+  height: 600px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.grandchild {
+  position: sticky;
+  top: 0;
+  background: yellow;
+}

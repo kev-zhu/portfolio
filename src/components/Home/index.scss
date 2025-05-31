@@ -1,9 +1,5 @@
 .home-page {  
-  overflow-x: hidden;
-  overflow-y: scroll;
   margin: auto;
-  position: relative;
-  width: 100%;
   display: grid;
   grid: auto / 4fr 6fr;
 
@@ -62,7 +58,6 @@
   }
 }
 
-// med screen
 @media only screen and (max-width: 1200px) {
   .text-zone {
     position: relative !important;
@@ -71,7 +66,6 @@
   }
 }
 
-// small screen
 @media only screen and (max-width: 550px) {
   .text-zone {
     min-width: 285px !important;
