@@ -1,7 +1,17 @@
 .parent {
-  height: 600px;
-  overflow-y: auto;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 60px;
+  height: 100%;
+  overflow: scroll;
+}
+
+.child1 {
+  background: green;
+}
+
+.child2 {
+  background: blue;
 }
 
 .grandchild {
