@@ -10,7 +10,7 @@ const Projects = () => {
   const [activeProject, setActiveProject] = useState(undefined)
   const projectRef = useRef(null)
 
-  const useOutsideAlert = (ref) => {
+  const useOutsideAlert = (ref, project) => {
     useEffect(() => {
       function handleClickOutside(event) {
         if (ref.current && !ref.current.contains(event.target)) {
@@ -21,10 +21,10 @@ const Projects = () => {
       return () => {
         document.removeEventListener('mousedown', handleClickOutside)
       }
-    }, [ref])
+    }, [ref, project])
   }
 
-  useOutsideAlert(projectRef)
+  useOutsideAlert(projectRef, activeProject)
   
   const handleKeyDown = (event) => {
     if (event.key === 'Escape') {
@@ -59,10 +59,12 @@ const Projects = () => {
   }
 
   const closeProjectInfo = () => {
-    setIsOpen(false)
-    setTimeout(() => {
-      setActiveProject(undefined)
-    }, 500)
+    if (activeProject) {
+      setIsOpen(false)
+      setTimeout(() => {
+        setActiveProject(undefined)
+      }, 500)
+    }
   }
 
   return (

@@ -8,11 +8,14 @@
     top: 0;
     min-height: fit-content;
     height: 100vh;
-    min-width: 520px;
     width: 100%;
     align-content: center;
     padding: 5%;
     box-sizing: border-box;
+
+    > h1 { 
+      width: 255px;
+    }
 
     .flat-button {
       color: #ffd700;
@@ -69,8 +72,10 @@
 @media only screen and (max-width: 550px) {
   .text-zone {
     margin-top: 60px;
-    min-width: 285px !important;
-    max-width: 285px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     > h2 {
       width: 250px;
