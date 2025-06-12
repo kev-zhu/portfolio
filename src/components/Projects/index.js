@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 const Projects = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(null)
   const [activeProject, setActiveProject] = useState(undefined)
   const projectRef = useRef(null)
 

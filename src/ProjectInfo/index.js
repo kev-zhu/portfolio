@@ -4,7 +4,7 @@ import { faCircleXmark, faArrowLeft, faArrowUpRightFromSquare } from '@fortaweso
 
 const ProjectInfo = ({ isOpen, closeProjectInfo, activeProject, projectList, renderImg, renderVideo}) => {
   return (
-      <div className='project-info-container'>
+      <div className={`project-info-container${isOpen === null ? ' initial' : ''}`}>
         <aside className={`project-info info-grid ${isOpen ? 'side-open' : 'side-close'}`}>
           <div className='project-return-item'>
             <div className='arrow' onClick={closeProjectInfo}>
