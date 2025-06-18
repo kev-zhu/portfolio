@@ -1,21 +1,99 @@
-.parent {
-  position: absolute;
-  top: 0;
-  left: 60px;
-  height: 100%;
-  overflow: scroll;
+.about-page {
+  display: grid;
+  grid: auto / 4fr 6fr;
+  height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+
+  .img-container {
+    margin: auto;
+    min-width: 300px;
+    width: 70%;
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
+    background-color: grey;
+    border-radius: 50%;
+    overflow: clip;
+
+    .profile-pic {
+      object-fit: cover;
+      scale: 1.5;
+      object-position: -10px -15%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .text-zone {
+    max-width: 900px;
+
+    h1 {
+      padding: 0;
+      margin: 0;
+      top: 0;
+      left: 0;
+      font-size: 53px;
+      font-family: "Coolvetica";
+      color: #ffd700;
+      font-weight: 400;
+      position: relative;
+    }
+
+    h1:before {
+      content:'A Bit ';
+    }
+    p {
+      font-size: 13px;
+      color: white;
+      font-family: sans-serif;
+      font-weight: 300;
+      min-width: fit-content;
+    }
+
+    .skills {
+      display: grid;
+      grid: auto / 1fr 1fr;
+    }
+
+    .skill-section {
+      font-weight: 500;
+      font-size: 16px;
+      color: white;
+      font-family: sans-serif;
+      min-width: fit-content;
+
+      p {
+        font-weight: 300;
+        font-size: 13px;
+      }
+    }
+  }
 }
 
-.child1 {
-  background: green;
+@media only screen and (max-width: 1200px) {
+  .about-page {
+    overflow: scroll;
+    grid: 1fr / auto;
+    gap: 20px;
+  }
 }
 
-.child2 {
-  background: blue;
-}
+@media only screen and (max-width: 550px) {
+  .about-page {
+    .img-container {
+      margin-top: 60px;
+    }
+    .text-zone {
+      h1:before {
+        content: '';
+      }
 
-.grandchild {
-  position: sticky;
-  top: 0;
-  background: yellow;
+      .skills {
+        grid: auto / 1fr;
+      }
+    }
+  }
 }

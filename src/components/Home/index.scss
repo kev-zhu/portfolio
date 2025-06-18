@@ -2,6 +2,8 @@
   margin: auto;
   display: grid;
   grid: auto / 4fr 6fr;
+  height: 100%;
+  overflow: scroll;
 
   .text-zone {
     position: sticky;
@@ -62,7 +64,7 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .text-zone {
+  .home-page .text-zone {
     position: relative !important;
     grid-area: 1 / span 2;
     height: 90vh !important;
@@ -70,7 +72,7 @@
 }
 
 @media only screen and (max-width: 550px) {
-  .text-zone {
+  .home-page .text-zone {
     margin-top: 60px;
     display: flex;
     flex-direction: column;
