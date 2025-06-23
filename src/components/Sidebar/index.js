@@ -22,7 +22,7 @@ const Sidebar = () => {
   useEffect(() => {
     window.addEventListener('resize', checkWidthMin)
     return () => {
-      document.removeEventListener('resize', checkWidthMin)
+      window.removeEventListener('resize', checkWidthMin)
     }
   })
 

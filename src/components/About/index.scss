@@ -1,6 +1,6 @@
 .about-page {
   display: grid;
-  grid: auto / 4fr 6fr;
+  grid: auto / 2fr 3fr;
   height: 100vh;
   padding: 40px;
   box-sizing: border-box;
@@ -12,7 +12,7 @@
     margin: auto;
     min-width: 300px;
     width: 70%;
-    max-width: 450px;
+    max-width: 350px;
     aspect-ratio: 1 / 1;
     background-color: grey;
     border-radius: 50%;

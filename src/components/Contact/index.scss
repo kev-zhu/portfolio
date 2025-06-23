@@ -1,110 +1,152 @@
-.contact-form {
-  width: 100%;
-  margin-top: 20px;
+.contact-page {
+  display: grid;
+  grid: auto / 1fr 1fr;
+  height: 100vh;
+  margin: auto;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
 
-  ul {
-    padding: 0;
-    margin: 0;
+  .contact-form {
+    min-width: 350px; 
+    max-width: 600px;
+    padding: 0 40px;
+    width: 100%;
+    box-sizing: border-box;
 
-    li {
+    ul {
       padding: 0;
       margin: 0;
-      list-style: none;
-      margin-bottom: 10px;
-      overflow: hidden;
-      display: block;
-      position: relative;
-      opacity: 0;
-      animation: fadeInUp 2s 2s;
-      animation-fill-mode: forwards;
-      clear: both;
+
+      li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-bottom: 10px;
+        display: block;
+      }
+    }
+
+    h1 {
+      color: white;
     }
 
     li.half {
       width: 49%;
-      margin-left: 2%;
       float: left;
+      margin-left: 2%;
       clear: none;
 
       &:first-child {
         margin-left: 0;
       }
     }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      border: 0;
+      background: #115173;
+      height: 50px;
+      font-size: 16px;
+      color: #fff;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      padding: 20px;
+      min-height: 150px;
+    }
+
+    .flat-button {
+      color: #ffd700;
+      background: 0 0;
+      font: 11px;
+      letter-spacing: 3px;
+      text-decoration: none;
+      padding: 8px 10px;
+      border: 1px solid #ffd700;
+      float: right;
+      border-radius: 4px;
+    }
   }
 
-  input[type='text'],
-  input[type='email'] {
-    width: 100%;
-    border: 0;
-    background: #115173;
-    height: 50px;
-    font-size: 16px;
-    color: #fff;
-    padding: 0 20px;
+  .text-zone {
+    padding: 40px;
+    color: white;
+    font-family: sans-serif;
     box-sizing: border-box;
-  }
+    justify-self: center;
 
-  textarea {
-    width: 100%;
-    border: 0;
-    background: #115173;
-    height: 50px;
-    font-size: 16px;
-    color: #fff;
-    padding: 20px;
-    min-height: 150px;
-    box-sizing: border-box;
-  }
+    h1 {
+      padding: 0;
+      margin: 0;
+      top: 0;
+      left: 0;
+      font-size: 53px;
+      font-family: "Coolvetica";
+      color: #ffd700;
+      font-weight: 400;
+    }
+    
+    .name {
+      font-size: 24px;
+      font-weight: 500;
+    }
 
-  .flat-button {
-    color: #ffd700;
-    background: 0 0;
-    font: 11px;
-    letter-spacing: 3px;
-    text-decoration: none;
-    padding: 8px 10px;
-    border: 1px solid #ffd700;
-    float: right;
-    border-radius: 4px;
+    .email {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    .links p {
+      font-size: 14px;
+      margin-top: 50px;
+    }
+
+    .links-container {
+      ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        width: fit-content;
+        gap: 20px;
+
+        > * {
+          font-size: 30px;
+          flex: 1;
+        }
+        li {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          a {
+            color: white;
+          }
+        }
+      }
+    }
   }
 }
 
-.info-map {
-  position: absolute;
-  background-color: #000;
-  top: 20px;
-  right: 1%;
-  z-index: 9999;
-  width: 200px;
-  padding: 15px;
-  color: #fff;
-  font-family: 'Helvetica';
-  font-size: 17px;
-  font-weight: 300;
-  opacity: 0;
-  animation: fadeIn 1s 1.5s;
-  animation-fill-mode: forwards;
+@media only screen and (max-width: 750px) {
+  .contact-page {
+    overflow: scroll;
+    grid: 1fr / max(90%, 350px);   
 
-  span {
-    font-size: 15px;
-    display: block;
-    padding-top: 15px;
-    color: #ffd700
+    .text-zone {
+      justify-self: start;
+    }
   }
 }
 
-.map-wrap {
-  background-color: rgba(8, 253, 216, 0.1);
-  float: right;
-  width: 50%;
-  height: 100%;
-}
-
-.leaflet-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  opacity: 0;
-  animation: backInRight 1s 1.2s;
-  animation-fill-mode: forwards;
+@media only screen and (max-width: 550px) {
+  .contact-page {
+    > :first-child {
+      margin-top: 60px;
+    }
+  }
 }
