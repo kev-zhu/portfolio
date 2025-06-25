@@ -9,7 +9,7 @@ const projects = {
       alt: 'ExpLore Media Files',
       github: 'https://github.com/kev-zhu/exPlore',
       info: 'ExpLore is a dynamic web app aimed at assisting explorers in discovering destination hotspots remotely. As the developer, I created an intuitive user-friendly map interface using MapBox GL, seamlessly integrating data sourced from Yelp Fusion\'s API and user-generated content. The application efficiently manages over 10,000 location data points across 500+ cities by optimizing performance through storage in a PostgreSQL relational database.',
-      skills: ['Python', 'Django', 'PostgreSQL']
+      skills: ['Python', 'Django', 'PostgreSQL', 'MapBox GL JS']
     },
     {
       title: 'Spendfolio',

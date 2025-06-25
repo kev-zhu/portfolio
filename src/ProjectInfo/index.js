@@ -17,6 +17,7 @@ const ProjectInfo = ({ isOpen, closeProjectInfo, activeProject, projectList, ren
           <div className='project-data-item data-grid-container'>
             <h2 className='project-title item-lg'>{activeProject ? activeProject.title : ''}</h2>
             <p className='brief-data item-lg'>{activeProject ? activeProject.info : ''}</p>
+            <p className='project-skills item-lg'>Primary Focus/Skills: {activeProject ? activeProject.skills.join(', ') : ''}</p>
             {activeProject ? activeProject.media.map((media, ind) => {
               const projectPath = projectList.base + activeProject.folder
               const fileType = media.split('.').pop()
