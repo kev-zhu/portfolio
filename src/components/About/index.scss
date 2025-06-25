@@ -46,7 +46,7 @@
       content:'A Bit ';
     }
     p {
-      font-size: 13px;
+      font-size: 14px;
       color: white;
       font-family: sans-serif;
       font-weight: 300;
@@ -81,6 +81,12 @@
   }
 }
 
+@media only screen and (max-width: 680px) {
+  .about-page .text-zone .skills {
+    grid: auto / 1fr;
+  }
+}
+
 @media only screen and (max-width: 550px) {
   .about-page {
     .img-container {
@@ -91,9 +97,6 @@
         content: '';
       }
 
-      .skills {
-        grid: auto / 1fr;
-      }
     }
   }
 }
