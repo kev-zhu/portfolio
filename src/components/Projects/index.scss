@@ -68,6 +68,7 @@
 h2.project-title {
   animation: none;
   font-size: 50px;
+  margin: 1% 0;
 }
 
 .brief-data,
@@ -112,5 +113,32 @@ h2.project-title {
 @media only screen and (max-width: 1200px) {
   .project-container {
     grid-area: 2 / span 2;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  h2.project-title {
+    font-size: 40px;
+  }
+
+  .brief-data,
+  .expand-data,
+  .project-gh {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .project { 
+    .brief-data {
+      display: none;
+    }
+  
+    .expand-data {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 20px;
+    }
   }
 }

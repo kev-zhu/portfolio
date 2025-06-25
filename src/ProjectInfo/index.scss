@@ -58,7 +58,7 @@
     grid-row: 3 / 4;
     background-color: #484848;
     padding: 15px;
-    font-size: 24px;
+    font-size: 16px;
     text-decoration: none;
     color: #adadad;
     width: 100%;
@@ -87,7 +87,7 @@
 
   > .item-sm {
     > * {
-      width: 60%;
+      width: 70%;
       align-self: center;
       justify-self: center;
     }
@@ -131,15 +131,20 @@
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .project-info {
+    margin-top: min(-100vh, -100%);
+  }
+}
+
 @media only screen and (max-width: 550px) {
   .project-info {
     height: calc(100vh - 60px);
     top: 60px;
   }
-}
 
-@media only screen and (max-width: 1200px) {
-  .project-info {
-    margin-top: -100%;
+  .item-sm {
+    grid-column: 1 / span 2;
   }
 }
+
