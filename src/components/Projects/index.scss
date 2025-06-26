@@ -1,11 +1,9 @@
-@use '../../assets/styles/colors.scss' as c;
-
 .project-container { 
   box-sizing: border-box;
   position: relative;
   height: fit-content;
   z-index: 10;
-  border-left: 1px solid c.$light-text-alt;
+  border-left: 1px solid var(--text-alt-color);
   float:left;
 
   ul {
@@ -43,14 +41,15 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.5);
     left: 0;
     top: 100%;
-    opacity: 1;
     padding: 20px;
+    background-color: var(--text-color);
+    opacity: 0.8;
 
+  
     * {
-      color: c.$light-text-alt;
+      color: var(--text-alt-color);
     }
 
     .expand-data {
@@ -59,7 +58,7 @@
     }
     
     .expand-data:hover {
-      color: c.$light-secondary;
+      color: var(--secondary-color);
     }
 
     .project-gh {
@@ -92,7 +91,7 @@ h2.project-title {
 // hover project animation -- updown
 .project:hover .project-data {
   animation: show-data .5s forwards;
-  opacity: 1;
+  opacity: 0.8;
   transition: opacity .3s;
 }
 

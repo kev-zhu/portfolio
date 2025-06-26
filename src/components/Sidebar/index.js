@@ -5,8 +5,9 @@ import Logo from "../../assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faFile, faHome, faUser } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import DarkMode from '../DarkMode';
 
-const Sidebar = () => {
+const Sidebar = ({ isDark, setIsDark }) => {
   const hbInput = useRef(null)
 
   const disableHamburger = () => {
@@ -28,6 +29,8 @@ const Sidebar = () => {
 
   return (
     <div className="nav-bar">
+      <DarkMode isDark={isDark} setIsDark={setIsDark}></DarkMode>
+
       <label className="nav-hamburger-menu">
         <input ref={hbInput} className="hamburger-check" type='checkbox' />
       </label>

@@ -16,7 +16,8 @@
     "react-loaders": "^3.0.1",
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
-    "sass": "^1.83.4"
+    "sass": "^1.83.4",
+    "use-local-storage": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

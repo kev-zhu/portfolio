@@ -1,14 +1,13 @@
-@use '../../assets/styles/colors.scss' as c;
-
 .nav-bar {
-  background: c.$light-background;
+  background: var(--background-color);
   width: 60px;
   height: 100vh;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 10;
   min-height: 350px;
-  border-right: 1px solid c.$light-text-alt;
+  border-right: 1px solid var(--text-alt-color);
+
 
   --bar-width: 25px;
   --bar-height: 5px;
@@ -38,7 +37,7 @@
 
     a {
       font-size: 22px;
-      color: c.$light-text;
+      color: var(--text-color);
       display: block;
       line-height: 51px;
       height: 51px;
@@ -50,7 +49,7 @@
       }
 
       &:hover {
-        color: c.$light-accent;
+        color: var(--accent-color);
 
         svg {
           opacity: 0;
@@ -95,14 +94,14 @@
 
     a.active {
       svg {
-        color: c.$light-accent;
+        color: var(--accent-color);
       }
     }
   }
 
   ul {
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
     width: 100%;
     display: block;
     padding: 0;
@@ -118,7 +117,7 @@
         line-height: 16px;
 
         &:hover svg {
-          color: c.$light-accent;
+          color: var(--accent-color);
         }
       }
     }
@@ -138,7 +137,7 @@
   gap: var(--hamburger-gap);
 
   position: absolute;
-  z-index: 1000;
+  z-index: 100;
   margin: 0;
 
   top: 50%;
@@ -157,7 +156,7 @@
   content: "";
   width: var(--bar-width);
   height: var(--bar-height);
-  background-color: c.$light-text;
+  background-color: var(--text-color);
   border-radius: 9999px;
   transform-origin: left center;
 }
@@ -205,19 +204,19 @@
     min-height: fit-content;
     display: flex;
 
-    background-color: c.$light-background;
+    background-color: var(--background-color);
     border-left: none;
-    border-bottom: 1px solid c.$light-text-alt;
+    border-bottom: 1px solid var(--text-alt-color);
 
     .nav-icons {
       margin-top: 61px;
       position: absolute;
-      background-color: c.$light-background;
+      background-color: var(--background-color);
       width: 70%;
       left: calc(-70% - 1px);
       height: calc(100vh - 6px);
       opacity: 0.95;
-      border-right: 1px solid c.$light-text-alt;
+      border-right: 1px solid var(--text-alt-color);
       translate: 0;
       transition: translate 0.5s ease-in-out;
 
@@ -241,7 +240,7 @@
   
         * {
           text-decoration: none;
-          color: c.$light-text;
+          color: var(--text-color);
         }
   
         svg {
@@ -267,4 +266,11 @@
   .nav-hamburger-menu {
     display: flex;
   }
+}
+
+.switch {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translate(-50%)
 }

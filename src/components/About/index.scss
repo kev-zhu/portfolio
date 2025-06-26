@@ -1,5 +1,3 @@
-@use '../../assets/styles/colors.scss' as c;
-
 .about-page {
   display: grid;
   grid: auto / 2fr 3fr;
@@ -38,7 +36,7 @@
       left: 0;
       font-size: 53px;
       font-family: "Coolvetica";
-      color: c.$light-primary;
+      color: var(--primary-color);
       font-weight: 400;
       position: relative;
     }
@@ -48,7 +46,7 @@
     }
     p {
       font-size: 14px;
-      color: c.$light-text;
+      color: var(--text-color);
       font-family: sans-serif;
       font-weight: 300;
       min-width: fit-content;
@@ -62,7 +60,7 @@
     .skill-section {
       font-weight: 500;
       font-size: 16px;
-      color: c.$light-secondary;
+      color: var(--secondary-color);
       font-family: sans-serif;
       min-width: fit-content;
 

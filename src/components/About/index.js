@@ -15,12 +15,12 @@ const About = () => {
           as I explore new areas of the tech world. I&#39;m eager to connect with
           professionals, mentors, and teams to collaborate, learn, and build
           meaningful digital experiences.
-          <p>
+        </p>
+        <p>
             Outside of coding, I enjoy testing out new recipes, exploring new
             cuisines and cultures, hiking, and pickleball! Chances are, you&#39;ll
             find me either in the kitchen, out on the courts, or planning where
             my next adventure will be.
-          </p>
         </p>
 
         <div className="skills">
