@@ -77,7 +77,7 @@ const Projects = () => {
           const fileType = project.main.split('.').pop()
           
           return (
-            <li className='project' key={project.title}>
+            <li className='main-project project' key={project.title}>
               {fileType === 'png' ? renderImg(projectPath + project.main, project.alt): renderVideo(projectPath + project.main)}
               <div className='project-data'>
                 <h2 className='project-title'>{project.title}</h2>
