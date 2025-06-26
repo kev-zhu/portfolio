@@ -19,7 +19,7 @@ const ProjectInfo = ({ isOpen, closeProjectInfo, activeProject, projectList, ren
             <p className='brief-data item-lg'>{activeProject ? activeProject.info : ''}</p>
             <p className='project-skills item-lg'>Primary Focus/Skills: {activeProject ? activeProject.skills.join(', ') : ''}</p>
             {activeProject ? activeProject.media.map((media, ind) => {
-              const projectPath = projectList.base + activeProject.folder
+              const projectPath = '.' + projectList.base + activeProject.folder
               const fileType = media.split('.').pop()
               const imgFile = media.split('.')[0].split('-').includes('mobile')
               return (<div className={['project', imgFile === true ? 'item-sm' : 'item-lg'].join(' ')} key={ind}>{fileType === 'png' ? renderImg(projectPath + media, projectPath + `cannot render image ${ind}`): renderVideo(projectPath + media)}</div>)

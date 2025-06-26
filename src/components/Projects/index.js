@@ -73,7 +73,7 @@ const Projects = () => {
       
       <ul>
         {projectList.projects.map(project => {
-          const projectPath = projectList.base + project.folder
+          const projectPath = '.' + projectList.base + project.folder
           const fileType = project.main.split('.').pop()
           
           return (
