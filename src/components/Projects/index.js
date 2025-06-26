@@ -1,7 +1,7 @@
 import './index.scss'
 import projectList from './projects.js'
 import { useState, useRef, useEffect } from 'react'
-import ProjectInfo from '../../ProjectInfo';
+import ProjectInfo from '../ProjectInfo';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 

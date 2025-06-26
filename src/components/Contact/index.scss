@@ -1,3 +1,5 @@
+@use '../../assets/styles/colors.scss' as c;
+
 .contact-page {
   display: grid;
   grid: auto / 1fr 1fr;
@@ -11,7 +13,8 @@
   .contact-form {
     min-width: 350px; 
     max-width: 600px;
-    padding: 0 40px;
+    padding: 40px;
+    background-color: c.$light-text-alt;
     width: 100%;
     box-sizing: border-box;
 
@@ -29,7 +32,7 @@
     }
 
     h1 {
-      color: white;
+      color: c.$light-text;
     }
 
     li.half {
@@ -48,12 +51,21 @@
     textarea {
       width: 100%;
       border: 0;
-      background: #115173;
+      background: c.$light-primary;
       height: 50px;
       font-size: 16px;
-      color: #fff;
+      color: c.$light-text-alt;
       padding: 0 20px;
       box-sizing: border-box;
+
+      &:focus {
+        border: none;
+        background: c.$light-secondary;
+      }
+
+      &::placeholder {
+        color: c.$light-text-alt
+      }
     }
 
     textarea {
@@ -62,13 +74,13 @@
     }
 
     .flat-button {
-      color: #ffd700;
+      color: c.$light-accent;
       background: 0 0;
       font: 11px;
       letter-spacing: 3px;
       text-decoration: none;
       padding: 8px 10px;
-      border: 1px solid #ffd700;
+      border: 1px solid c.$light-accent;
       float: right;
       border-radius: 4px;
     }
@@ -76,7 +88,7 @@
 
   .text-zone {
     padding: 40px;
-    color: white;
+    color: c.$light-text;
     font-family: sans-serif;
     box-sizing: border-box;
     justify-self: center;
@@ -88,7 +100,7 @@
       left: 0;
       font-size: 53px;
       font-family: "Coolvetica";
-      color: #ffd700;
+      color: c.$light-primary;
       font-weight: 400;
     }
     
@@ -124,7 +136,7 @@
           margin: 0;
           list-style: none;
           a {
-            color: white;
+            color: c.$light-accent;
           }
         }
       }

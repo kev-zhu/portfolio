@@ -1,17 +1,18 @@
+@use '../../assets/styles/colors.scss' as c;
+
 .nav-bar {
-  background: #181818;
+  background: c.$light-background;
   width: 60px;
   height: 100vh;
   position: sticky;
   top: 0;
   z-index: 999;
   min-height: 350px;
-
+  border-right: 1px solid c.$light-text-alt;
 
   --bar-width: 25px;
   --bar-height: 5px;
   --hamburger-gap: 3px;
-  --foreground: #333;
   --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 
   .logo {
@@ -37,7 +38,7 @@
 
     a {
       font-size: 22px;
-      color: #4d4d4e;
+      color: c.$light-text;
       display: block;
       line-height: 51px;
       height: 51px;
@@ -49,7 +50,7 @@
       }
 
       &:hover {
-        color: yellow;
+        color: c.$light-accent;
 
         svg {
           opacity: 0;
@@ -94,7 +95,7 @@
 
     a.active {
       svg {
-        color: #ffd700
+        color: c.$light-accent;
       }
     }
   }
@@ -117,7 +118,7 @@
         line-height: 16px;
 
         &:hover svg {
-          color: #ffd700
+          color: c.$light-accent;
         }
       }
     }
@@ -156,7 +157,7 @@
   content: "";
   width: var(--bar-width);
   height: var(--bar-height);
-  background-color: var(--foreground);
+  background-color: c.$light-text;
   border-radius: 9999px;
   transform-origin: left center;
 }
@@ -204,12 +205,14 @@
     min-height: fit-content;
     display: flex;
 
-    background-color: white;
+    background-color: c.$light-background;
+    border-left: none;
+    border-bottom: 1px solid c.$light-text-alt;
 
     .nav-icons {
-      margin-top: 60px;;
+      margin-top: 61px;
       position: absolute;
-      background-color: white;
+      background-color: c.$light-background;
       width: 70%;
       right: 0;
       height: calc(100vh - 6px);
@@ -237,7 +240,7 @@
   
         * {
           text-decoration: none;
-          color:#4d4d4e;
+          color: c.$light-text;
         }
   
         svg {

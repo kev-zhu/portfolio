@@ -1,3 +1,5 @@
+@use '../../assets/styles/colors.scss' as c;
+
 .about-page {
   display: grid;
   grid: auto / 2fr 3fr;
@@ -14,7 +16,6 @@
     width: 70%;
     max-width: 350px;
     aspect-ratio: 1 / 1;
-    background-color: grey;
     border-radius: 50%;
     overflow: clip;
 
@@ -37,7 +38,7 @@
       left: 0;
       font-size: 53px;
       font-family: "Coolvetica";
-      color: #ffd700;
+      color: c.$light-primary;
       font-weight: 400;
       position: relative;
     }
@@ -47,7 +48,7 @@
     }
     p {
       font-size: 14px;
-      color: white;
+      color: c.$light-text;
       font-family: sans-serif;
       font-weight: 300;
       min-width: fit-content;
@@ -61,7 +62,7 @@
     .skill-section {
       font-weight: 500;
       font-size: 16px;
-      color: white;
+      color: c.$light-secondary;
       font-family: sans-serif;
       min-width: fit-content;
 
@@ -96,7 +97,6 @@
       h1:before {
         content: '';
       }
-
     }
   }
 }
