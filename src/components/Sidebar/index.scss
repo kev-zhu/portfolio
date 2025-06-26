@@ -209,6 +209,7 @@
     border-bottom: 1px solid var(--text-alt-color);
 
     .nav-icons {
+      z-index: 100;
       margin-top: 61px;
       position: absolute;
       background-color: var(--background-color);
