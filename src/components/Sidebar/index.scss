@@ -143,7 +143,7 @@
 
   top: 50%;
   transform: translateY(-50%);
-  right: 1rem;
+  left: 1.5rem;
 
   background-color: inherit;
   border-radius: 5px;
@@ -193,7 +193,7 @@
 
 .nav-hamburger-menu:has(input:checked) + .nav-icons {
   display: block;
-  translate: 0;
+  translate: 100%;
 }
 
 
@@ -214,11 +214,12 @@
       position: absolute;
       background-color: c.$light-background;
       width: 70%;
-      right: 0;
+      left: calc(-70% - 1px);
       height: calc(100vh - 6px);
-      translate: 100%;
-      transition: translate 0.5s;
       opacity: 0.95;
+      border-right: 1px solid c.$light-text-alt;
+      translate: 0;
+      transition: translate 0.5s ease-in-out;
 
       .logo {
         display: none;
