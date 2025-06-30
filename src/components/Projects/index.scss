@@ -53,6 +53,8 @@
     }
 
     .expand-data {
+      color: var(--secondary-color);
+      font-weight: 400;
       cursor: pointer;
       text-decoration: underline 1px;
     }
@@ -148,6 +150,13 @@ h2.project-title {
       bottom: 0;
       left: 0;
       padding: 20px;
+    }
+
+    .project-gh,
+    .expand-data {
+      color: var(--primary-color);
+      font-size: 20px;
+      font-weight: 500;
     }
   }
 }
