@@ -75,7 +75,7 @@
 @media only screen and (max-width: 1200px) {
   .about-page {
     overflow: scroll;
-    grid: 1fr / auto;
+    grid: auto / 1fr;
     gap: 20px;
   }
 }
