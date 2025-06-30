@@ -10,12 +10,14 @@
 
   .img-container {
     margin: auto;
-    min-width: 300px;
-    width: 70%;
-    max-width: 350px;
     aspect-ratio: 1 / 1;
+    width: 70%;
+    height: auto;
+    min-width: 300px;
+    max-width: 350px;
     border-radius: 50%;
     overflow: clip;
+    display:block;
 
     .profile-pic {
       object-fit: cover;
@@ -28,6 +30,7 @@
 
   .text-zone {
     max-width: 900px;
+    display: block;
 
     h1 {
       padding: 0;
@@ -75,7 +78,7 @@
 @media only screen and (max-width: 1200px) {
   .about-page {
     overflow: scroll;
-    grid: auto / 1fr;
+    grid: 1fr / 1fr;
     gap: 20px;
   }
 }
