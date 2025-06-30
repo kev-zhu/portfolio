@@ -18,6 +18,9 @@ const ProjectInfo = ({ isOpen, closeProjectInfo, activeProject, projectList, ren
             <h2 className='project-title item-lg'>{activeProject ? activeProject.title : ''}</h2>
             <p className='brief-data item-lg'>{activeProject ? activeProject.info : ''}</p>
             <p className='project-skills item-lg'>Primary Focus/Skills: {activeProject ? activeProject.skills.join(', ') : ''}</p>
+            <div className='project-demo-link item-lg'>
+              {activeProject ? (activeProject.demo ? <a href={activeProject.demo} target='_blank' rel='noreferrer'>{activeProject.demo}</a>: '' ) : ''}
+            </div>
             {activeProject ? activeProject.media.map((media, ind) => {
               const projectPath = '.' + projectList.base + activeProject.folder
               const fileType = media.split('.').pop()

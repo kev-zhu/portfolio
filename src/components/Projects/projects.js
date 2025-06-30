@@ -9,7 +9,8 @@ const projects = {
       alt: 'ExpLore Media Files',
       github: 'https://github.com/kev-zhu/exPlore',
       info: 'ExpLore is a dynamic web app aimed at assisting explorers in discovering destination hotspots remotely. As the developer, I created an intuitive user-friendly map interface using MapBox GL, seamlessly integrating data sourced from Yelp Fusion\'s API and user-generated content. The application efficiently manages over 10,000 location data points across 500+ cities by optimizing performance through storage in a PostgreSQL relational database.',
-      skills: ['Python', 'Django', 'PostgreSQL', 'MapBox GL JS']
+      skills: ['Python', 'Django', 'PostgreSQL', 'MapBox GL JS'],
+      demo: 'https://explore-omega-six.vercel.app/'
     },
     {
       title: 'Spendfolio',
@@ -19,7 +20,8 @@ const projects = {
       alt: 'Expenses Media File',
       github: 'https://github.com/kev-zhu/expenseswebsite',
       info: 'Spendfolio is a web app that helps financially interested users track expenses and visualize their data across charts and tables. I served as the full-stack developer for this project, utilizing Bootstrap to create a responsive web design. Chart.js was employed to organize data into visual charts and graphs, aiding users in understanding their financial trends.',
-      skills: ['Python', 'Django', 'PostgreSQL', 'Bootstrap']
+      skills: ['Python', 'Django', 'PostgreSQL', 'Bootstrap'],
+      demo: ''
     },
     {
       title: 'Phonebook',
@@ -29,7 +31,8 @@ const projects = {
       alt: 'Phonebook Media Files',
       github: 'https://github.com/kev-zhu/phonebook',
       info: 'For a Full Stack Open project, I developed a phonebook single-page application using the MERN stack. To ensure modern web development principles, I utilized React for frontend development, such as creating reusable styled components, and managed backend server-side operations. This application also communicates with MongoDB\'s cloud platform and effectively handles RESTful APIs for data management.',
-      skills: ['MongoDB', 'Express', 'React', 'Node']
+      skills: ['MongoDB', 'Express', 'React', 'Node'],
+      demo: ''
     },
     {
       title: 'Dictionary',
@@ -39,7 +42,8 @@ const projects = {
       alt: 'Dictionary Media Files',
       github: 'https://github.com/kev-zhu/dictionary',
       info: 'I developed a dictionary web page as a Frontend Mentor project, implementing search functionality and interactive elements using HTML, CSS, and JavaScript to faithfully follow the design mockups provided. I ensured responsiveness across devices by testing with the Google Chrome Dev Tools’ device toolbar feature and verified proper application functionality with manual testing.',
-      skills: ['HTML, CSS, Javascript']
+      skills: ['HTML, CSS, Javascript'],
+      demo: ''
     }
   ]
 }
