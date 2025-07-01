@@ -8,18 +8,18 @@ https://kev-zhu.github.io/
 
 ## Tech Stack
 
--`React`
--`CSS`
--`Email.js`
+- `React`
+- `CSS`
+- `Email.js`
 
 ## Features
 
--`Responsive Design`
--`Dark Mode Toggle`
--`Project Showcase`
--`Contact Form`
--`Smooth Transitions`
--`Intuitive UI`
+- `Responsive Design`
+- `Dark Mode Toggle`
+- `Project Showcase`
+- `Contact Form`
+- `Smooth Transitions`
+- `Intuitive UI`
 
 ## Project Purpose & Growth
 
