@@ -16,7 +16,7 @@
     min-width: 300px;
     max-width: 350px;
     border-radius: 50%;
-    overflow: clip;
+    overflow: hidden;
     display:block;
 
     .profile-pic {
@@ -78,8 +78,7 @@
 @media only screen and (max-width: 1200px) {
   .about-page {
     overflow: scroll;
-    grid: 1fr / 1fr;
-    gap: 20px;
+    display: block;
   }
 }
 
