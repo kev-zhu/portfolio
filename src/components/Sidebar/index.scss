@@ -273,3 +273,7 @@
   left: 50%;
   transform: translate(-50%)
 }
+
+.App[data-theme="dark"] .nav-icons{
+  filter: brightness(1.2);
+}

@@ -3,7 +3,8 @@
   display: grid;
   grid: auto / 4fr 6fr;
   height: 100%;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   .text-zone {
     position: sticky;

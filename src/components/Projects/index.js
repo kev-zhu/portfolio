@@ -47,7 +47,7 @@ const Projects = () => {
 
   const renderVideo = (path) => {
     return (
-      <video autoPlay loop muted preload="auto">
+      <video autoPlay loop muted preload="auto" playsInline>
         <source src={path} type='video/mp4'/>
       </video>
     )
