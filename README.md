@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# My Developer Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to my portfolio’s repository! This personal portfolio site showcases my self-taught full-stack web development projects, skills, and background. It is built to highlight my journey, projects, and learning as a software engineer.
 
-## Available Scripts
+## Live on
 
-In the project directory, you can run:
+https://kev-zhu.github.io/
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `React`
+- `CSS`
+- `Email.js`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- `Responsive Design`
+- `Dark Mode Toggle`
+- `Project Showcase`
+- `Contact Form`
+- `Smooth Transitions`
+- `Intuitive UI`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Purpose & Growth
 
-### `npm run build`
+I built this portfolio from scratch to improve my front-end skills and create a clean, minimal layout that reflects both my work and personality as a developer. I intentionally avoided using templates or UI frameworks to sharpen my understanding of responsive design, layout structuring, and CSS styling. I believe in using every opportunity as a chance to learn and grow, and this project was no exception. My goal was to keep things simple while highlighting the most important part, which is my projects.
+Building everything from scratch required persistence and resourcefulness. I ran into challenges around visual design and UI, especially when translating my ideas into functional React components. After deploying the portfolio, I encountered unexpected rendering issues, which I successfully debugged and resolved. That experience gave me a deeper understanding of React and reinforced my ability to troubleshoot and learn independently — skills that have shaped how I approach every new project since.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contact
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to reach out at kevinzhu35@gmail.com or connect with me on Linkedin [@kevinzhuu](https://www.linkedin.com/in/kevinzhuu/)!
