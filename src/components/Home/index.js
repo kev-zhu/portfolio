@@ -10,9 +10,9 @@ const Home = () => {
           <span>
             Hi!
             <br />
-            I'm Kevin
+            I'm <Link className="name" to="/about">Kevin</Link>
             <br />
-            Full-Stack Developer
+            <span className="title">Full-Stack Developer</span>
           </span>
         </h1>
         <h2>

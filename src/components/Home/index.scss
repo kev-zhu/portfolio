@@ -46,6 +46,16 @@
     margin: 0;
     font-family: 'Coolvetica';
     font-weight: 400;
+
+    .name {
+      color: inherit;
+      text-decoration-thickness: 2px;
+    }
+
+    .title {
+      color: var(--secondary-color);
+
+    }
   }
 
   h2 {
