@@ -57,6 +57,11 @@
       font-weight: 400;
       cursor: pointer;
       text-decoration: underline 1px;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 20px;
     }
     
     .expand-data:hover {
@@ -143,13 +148,6 @@ h2.project-title {
   .project { 
     .brief-data {
       display: none;
-    }
-  
-    .expand-data {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      padding: 20px;
     }
 
     .project-gh,
