@@ -1,7 +1,7 @@
 .about-page {
   display: grid;
   grid: auto / 2fr 3fr;
-  height: 100svh;
+  height: auto;
   padding: 40px;
   box-sizing: border-box;
   align-items: center;
@@ -91,9 +91,6 @@
 
 @media only screen and (max-width: 550px) {
   .about-page {
-    .img-container {
-      margin-top: 60px;
-    }
     .text-zone {
       h1:before {
         content: '';

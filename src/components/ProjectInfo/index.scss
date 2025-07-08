@@ -16,7 +16,7 @@
   background-color: var(--background-color);
   box-sizing: border-box;
   overflow: scroll;
-  overscroll-behavior: none;
+  // overscroll-behavior: none;
   height: 100vh;
   z-index: 100;
 }
@@ -161,7 +161,6 @@
 @media only screen and (max-width: 550px) {
   .project-info {
     height: calc(100svh - 60px);
-    top: 60px;
   }
 
   .item-sm {

@@ -81,8 +81,12 @@
 }
 
 @media only screen and (max-width: 550px) {
+  .container {
+    position: relative;
+    height: calc(100svh - 60px);
+  }
+
   .home-page .text-zone {
-    margin-top: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
